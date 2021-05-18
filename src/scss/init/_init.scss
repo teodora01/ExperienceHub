@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+$fontHeader: "Ubuntu", sans-serif;
+$fontContent: "Poppins", sans-serif;
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+
+    @include sm {
+        font-size: 50%;
+    }
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+::-moz-selection {
+    color: $white;
+    background: $theme-main-1;
+}
+
+::selection {
+    color: $white;
+    background: $theme-main-1;
+}
+
+body {
+    font-weight: 400;
+    line-height: 1.7;
+    color: $font;
+    overflow-x: hidden;
+    overflow-y: hidden !important;
+
+    position: relative;
+
+    font-family: $fontContent;
+}
+
+body.noScroll {
+    overflow: hidden;
+}
+
+.clearfix {
+    clear: both;
+    overflow: auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+main {
+    &.app {
+        margin-left: 120px;
+        background: white;
+        padding: 20px 5px;
+        //! dodat min height 100vh da bi loader uvjek bio centriran
+        height: 100%;
+        min-height: 100vh;
+    }
+    // .content {
+    //     background: $white;
+    //     min-height: calc(100vh - 90px);
+    //     border-radius: 8px;
+    //     padding: 4rem 2rem;
+    //     position: relative;
+    // }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: $background;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: $theme-main-1-l-20;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: $theme-main-1-l-20;
+}

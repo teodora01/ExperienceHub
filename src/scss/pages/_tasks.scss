@@ -1,0 +1,184 @@
+.sorters {
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: $dark-grey;
+    opacity: 1;
+
+    .arrow {
+        width: 10px;
+    }
+    div {
+        font-size: 16px;
+        min-width: 125px;
+        margin-right: 20px;
+    }
+}
+
+.finishedTasks {
+    height: 40px;
+    border-radius: 12px;
+    background-color: #f6f6f6;
+    margin-bottom: 20px;
+    color: $light-8-d-40;
+
+    &:hover {
+        background-color: darken($color: #f6f6f6, $amount: 5%);
+        color: $light-8-d-50;
+    }
+}
+
+.finishedTasksActive {
+    height: 40px;
+    border-radius: 12px;
+    background-color: darken($color: #f6f6f6, $amount: 5%);
+    margin-bottom: 20px;
+    color: $light-8-d-60;
+    font-weight: 600;
+
+    // &:hover {
+    //     background-color: darken($color: #f6f6f6, $amount: 5%);
+    //     color: $theme-main-1-d-50;
+    // }
+}
+.solutions {
+    height: 40px;
+    border-radius: 12px;
+    background-color: darken($color: #f6f6f6, $amount: 10%);
+    margin-bottom: 20px;
+    color: $light-8-d-40;
+
+    &:hover {
+        background-color: darken($color: #f6f6f6, $amount: 20%);
+        color: $light-8-d-50;
+    }
+}
+
+.solutionsActive {
+    height: 40px;
+    border-radius: 12px;
+    background-color: darken($color: #f6f6f6, $amount: 20%);
+    margin-bottom: 20px;
+    color: $theme-main-1;
+
+    &:hover {
+        background-color: darken($color: #f6f6f6, $amount: 20%);
+        color: $theme-main-1-d-10;
+    }
+}
+.additionalsFile {
+    border: 1px dotted $light-8-d-30;
+    width: 500px;
+    height: 200px;
+}
+.additionalsFileCourse {
+    border: 1px dotted $light-8-d-30;
+}
+.checkboxTask {
+    border: 2px solid $light-8;
+    padding: 10px;
+    border-radius: 4px;
+}
+.solution {
+    color: $light-8-d-50;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.previewBoxTasks {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #ededed;
+    border-radius: 14px;
+    box-sizing: border-box;
+    .name {
+        text-align: left;
+        font-size: 16px;
+        letter-spacing: 0px;
+        color: $light-1;
+        font-weight: 700;
+    }
+
+    .role {
+        text-align: left;
+        font-size: 12px;
+        letter-spacing: 0px;
+        color: $text-default;
+    }
+
+    .mentor-info {
+        text-align: left;
+        font-size: 12px;
+        letter-spacing: 0px;
+        color: $text-default;
+    }
+}
+.finishedDetails {
+    background-color: white;
+    border-radius: 12px;
+    // cursor: pointer;
+    padding: 10px;
+    transition: all 0.1s ease-in-out;
+    transform: translateY(-5px);
+    box-shadow: 0 2px 5px 5px $light-9;
+}
+.deleteIcon {
+    vertical-align: middle;
+
+    fill: $theme-main-1;
+    stroke: $theme-main-1;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+}
+.description {
+    color: $light-8-d-50;
+    font-size: 14px;
+}
+
+.photoTask {
+    background: transparent url("img/bg.png") 0% 0% no-repeat padding-box;
+    border-radius: 6px !important;
+    opacity: 1;
+    width: 56px;
+    height: 56px;
+    margin: 0 20px;
+}
+.awardIconDetails {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    .a {
+        fill: none;
+        stroke: $theme-main-1;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+    }
+}
+
+.rejectedIcon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    .a {
+        fill: none;
+        stroke: $theme-main-1 !important;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+    }
+}
+
+.taskName {
+    color: $light-8-d-40;
+}
+@include sm {
+    .sorters {
+        div {
+            font-size: 10px;
+            margin-right: 5px;
+            min-width: 110px;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.deskOfficerReports {
+    .mentor {
+        min-height: 40px;
+        border-radius: 12px;
+        background-color: darken($color: #f6f6f6, $amount: 10%);
+        margin-bottom: 20px;
+        color: $light-8-d-40;
+
+        &:hover {
+            background-color: darken($color: #f6f6f6, $amount: 20%);
+            color: $light-8-d-50;
+        }
+    }
+
+    .mentorActive {
+        min-height: 40px;
+        border-radius: 12px;
+        background-color: darken($color: #f6f6f6, $amount: 20%);
+        margin-bottom: 20px;
+        color: $theme-main-1;
+
+        &:hover {
+            background-color: darken($color: #f6f6f6, $amount: 20%);
+            color: $theme-main-1-d-10;
+        }
+    }
+
+    .session-active {
+        // background-color: darken($color: #f6f6f6, $amount: 10%);
+        // border-radius: 12px;
+        color: $theme-main-1;
+        // padding: 5px;
+    }
+    .confirmButton {
+        background-color: $theme-main-1;
+        &:hover {
+            background-color: $theme-main-1-d-20;
+        }
+    }
+    .confirmedButton {
+        background-color: $light-3;
+        &:hover {
+            background-color: $theme-main-1-d-20;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+.studentGroupsOverview {
+    .awardIcon {
+        width: 22px;
+        height: 22px;
+        vertical-align: middle;
+
+        .a {
+            fill: none;
+            stroke: $dark-orange-1;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 2px;
+        }
+    }
+    .clipboardIcon {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+
+        .a {
+            fill: orange;
+            stroke: $dark-orange-1;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 2px;
+        }
+    }
+    .awardIconWhite {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+
+        .a {
+            fill: none;
+            stroke: $white;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 2px;
+        }
+    }
+    .custom-link {
+        &:link {
+            color: $important-3;
+            text-decoration: none;
+        }
+
+        &:visited {
+            color: $important-3;
+            text-decoration: none;
+        }
+
+        &:hover {
+            text-decoration: none;
+            font-size: 1.9rem;
+            color: $important-4;
+        }
+
+        &:active {
+            color: $important-3;
+            text-decoration: none;
+        }
+    }
+    .border-lightgray {
+        border: 1px solid lightgray;
+    }
+}

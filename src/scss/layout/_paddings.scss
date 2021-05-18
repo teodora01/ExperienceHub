@@ -1,0 +1,70 @@
+$paddings: (
+	0,
+	1,
+	2,
+	3,
+	4,
+	5,
+	10,
+	15,
+	18,
+	20,
+	25,
+	30,
+	35,
+	40,
+	45,
+	50,
+	60,
+	70,
+	80,
+	90,
+	100
+);
+
+@each $padding in $paddings {
+	$paddingRem: $padding/10;
+
+	// All paddings
+	.padding-#{$padding},
+	.p-#{$padding} {
+		padding: $paddingRem + rem;
+	}
+	// Horizontal padding
+	.padding-h-#{$padding},
+	.px-#{$padding},
+	.padding-horizontal-#{$padding} {
+		padding-left: $paddingRem + rem;
+		padding-right: $paddingRem + rem;
+	}
+	// Vertical padding
+	.padding-v-#{$padding},
+	.py-#{$padding} .padding-vertical-#{$padding} {
+		padding-top: $paddingRem + rem;
+		padding-bottom: $paddingRem + rem;
+	}
+	// padding top
+	.padding-t-#{$padding},
+	.pt-#{$padding},
+	.padding-top-#{$padding} {
+		padding-top: $paddingRem + rem;
+	}
+	// padding right
+	.padding-r-#{$padding},
+	.pr-#{$padding},
+	.padding-right-#{$padding} {
+		padding-right: $paddingRem + rem;
+	}
+	// padding bottom
+	.padding-b-#{$padding},
+	.pb-#{$padding},
+	.padding-bottom-#{$padding} {
+		padding-bottom: $paddingRem + rem;
+	}
+	//padding left
+	.padding-l-#{$padding},
+	.pl-#{$padding},
+	.padding-left-#{$padding} {
+		padding-left: $paddingRem + rem;
+	}
+}

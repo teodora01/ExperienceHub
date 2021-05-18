@@ -1,0 +1,171 @@
+//Background size
+
+.background-size-30-perc,
+.background-size-30perc,
+.bg-size-30perc,
+.bg-size-30-perc {
+    background-size: 30%;
+}
+
+.background-size-50-perc,
+.background-size-50perc,
+.bg-size-50perc,
+.bg-size-50-perc {
+    background-size: 50%;
+}
+
+.background-size-80-perc,
+.background-size-80perc,
+.bg-size-80perc,
+.bg-size-80-perc {
+    background-size: 80%;
+}
+
+.background-size-100-perc,
+.background-size-100perc,
+.bg-size-100perc,
+.bg-size-100-perc {
+    background-size: 100%;
+}
+
+.background-size-120-perc,
+.background-size-120perc,
+.bg-size-120perc,
+.bg-size-120-perc {
+    background-size: 120% 120%;
+}
+
+.background-size-cover {
+    background-size: cover;
+}
+
+.background-size-contain {
+    background-size: contain;
+}
+
+//Background repeat
+
+.bg-repeat,
+.background-repeat {
+    background-repeat: repeat;
+}
+
+.background-no-repeat,
+.bg-no-repeat {
+    background-repeat: no-repeat;
+}
+
+//Background position
+.bg-position-initial,
+.bg-pos-initial {
+    background-position: initial;
+}
+
+.bg-position-center,
+.bg-pos-center {
+    background-position: center;
+}
+
+.bg-position-0,
+.bg-pos-0 {
+    background-position: 0px 0px;
+}
+
+.bg-position-10,
+.bg-pos-10 {
+    background-position: 10px 10px;
+}
+
+.bg-position-30,
+.bg-pos-30 {
+    background-position: 30px 30px;
+}
+
+.bg-position-50,
+.bg-pos-50 {
+    background-position: 30px 30px;
+}
+
+.bg-position-30,
+.bg-pos-30 {
+    background-position: 30px 30px;
+}
+
+.bg-position-10-perc,
+.bg-pos-10-perc,
+.bg-position-10perc,
+.bg-pos-10perc {
+    background-position: 10% 10%;
+}
+
+.bg-position-25-perc,
+.bg-pos-25-perc,
+.bg-position-25perc,
+.bg-pos-25perc {
+    background-position: 25% 25%;
+}
+
+.bg-position-33-perc,
+.bg-pos-33-perc,
+.bg-position-33perc,
+.bg-pos-33perc {
+    background-position: 33% 33%;
+}
+
+.bg-position-50-perc,
+.bg-pos-50-perc,
+.bg-position-50perc,
+.bg-pos-50perc {
+    background-position: 50% 50%;
+}
+
+.clean-background {
+    background-color: #ffffffee;
+}
+
+.lightened-background {
+    background-color: #e3e3e377;
+}
+
+.dimmed-background {
+    background-color: #33333388;
+}
+
+.modal-background {
+    background-color: #181818ee;
+}
+
+.shadow-none {
+    box-shadow: none;
+}
+
+.shadow-none-i {
+    box-shadow: none !important;
+}
+
+.shadow-medium {
+    box-shadow: 0 0 30px -5px #333;
+}
+.shadow-light {
+    box-shadow: 0 0 30px -5px rgb(201, 201, 201);
+}
+.shadow-b-light {
+    box-shadow: 0 10px 20px -4px #333;
+}
+
+.shadow-b-r-light {
+    box-shadow: 10px 10px 30px -17px #333;
+}
+
+.dimmed-background-2 {
+    background-color: black;
+}
+.dimmed-background-3 {
+    background-color: #43425d6b;
+}
+.personal-shadow {
+    box-shadow: 0px 0px 22px $background;
+}
+.personal-shadow-darker {
+    box-shadow: 0px 0px 22px #11111285;
+}

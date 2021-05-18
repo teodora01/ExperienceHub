@@ -1,0 +1,148 @@
+$px: (
+    0,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50,
+    60,
+    70,
+    80,
+    90,
+    95,
+    100,
+    110,
+    120,
+    130,
+    140,
+    150,
+    160,
+    170,
+    180,
+    197,
+    200,
+    220,
+    250,
+    270,
+    280,
+    300,
+    350,
+    380,
+    400,
+    450,
+    500,
+    550,
+    650,
+    700,
+    750,
+    800
+);
+
+$percentage: (10, 20, 30, 35, 40, 45, 48, 50, 60, 70, 75, 80, 85, 90, 95, 100);
+
+@each $el in $px {
+    $rem: $el/10;
+
+    .width-#{$el},
+    .w-#{$el} {
+        width: $rem + rem;
+    }
+    .max-width-#{$el},
+    .max-w-#{$el} {
+        max-width: $rem + rem;
+    }
+    .min-width-#{$el},
+    .min-w-#{$el} {
+        min-width: $rem + rem;
+    }
+
+    //height
+
+    .height-#{$el},
+    .h-#{$el} {
+        height: $rem + rem;
+    }
+
+    .max-height-#{$el},
+    .max-h-#{$el} {
+        max-height: $rem + rem;
+    }
+
+    .min-height-#{$el},
+    .min-h-#{$el} {
+        min-height: $rem + rem;
+    }
+}
+
+@each $el in $percentage {
+    .width-#{$el}-perc,
+    .width-#{$el}perc,
+    .w-#{$el}-perc,
+    .w-#{$el}perc {
+        width: $el#{"%"};
+    }
+
+    .max-width-#{$el}-perc,
+    .max-width-#{$el}perc,
+    .max-w-#{$el}-perc,
+    .max-w-#{$el}perc {
+        max-width: $el#{"%"};
+    }
+
+    .min-width-#{$el}perc,
+    .min-w-#{$el}perc {
+        min-width: $el#{"%"};
+    }
+
+    .height-#{$el}-perc,
+    .height-#{$el}perc,
+    .h-#{$el}-perc,
+    .h-#{$el}perc {
+        height: $el#{"%"};
+    }
+
+    .max-height-#{$el}-perc,
+    .max-height-#{$el}perc,
+    .max-h-#{$el}-perc,
+    .max-h-#{$el}perc {
+        max-height: $el#{"%"};
+    }
+
+    .min-height-#{$el}-perc,
+    .min-height-#{$el}perc,
+    .min-h-#{$el}-perc,
+    .min-h-#{$el}perc {
+        min-height: $el#{"%"};
+    }
+
+    .h-vh-#{$el} {
+        height: $el + vh;
+    }
+    .min-h-vh-#{$el} {
+        min-height: $el + vh;
+    }
+    .max-h-vh-#{$el} {
+        max-height: $el + vh;
+    }
+}
+
+.h-auto {
+    height: auto !important;
+}
+
+.w-auto {
+    width: auto !important;
+}
+
+.w-fit-content {
+    width: fit-content !important;
+}
+
+.h-fit-content {
+    height: fit-content !important;
+}

@@ -1,0 +1,51 @@
+.students-overview {
+    // .title {
+    //     width: 115px;
+    //     height: 53px;
+    //     text-align: left;
+    //     color: #252931;
+    //     font-weight: 400;
+    //     opacity: 1;
+    // }
+    .filters {
+        padding: 0px;
+    }
+    .headerAddButton {
+        span:nth-child(2) {
+            vertical-align: text-top;
+        }
+    }
+    .cards-container {
+        padding-left: 0px;
+    }
+    #header:after {
+        display: block;
+        clear: both;
+        content: "";
+        opacity: 1;
+        position: relative;
+        left: -6px;
+        bottom: 15px;
+        height: 1px;
+        width: 99%;
+        border-bottom: 1px solid #ededed;
+        margin: 0 auto;
+        padding: 4px 0px;
+    }
+    .sorters {
+        text-align: left;
+        font-weight: medium;
+        font-size: 14px;
+        letter-spacing: 0px;
+        color: $dark-grey;
+        opacity: 1;
+        .arrow {
+            width: 10px;
+        }
+        div {
+            font-size: 16px;
+            min-width: 125px;
+            margin-right: 20px;
+        }
+    }
+}
