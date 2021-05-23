@@ -15,6 +15,8 @@ import {
     lettersOnlyValidation,
     passwordStrength,
 } from "../../functions/utilFunctions/validations";
+import Modal from "../../CMS/Modal/Modal";
+import { ModalContent } from "../../CMS/Modal/ModalContent";
 
 class Form extends React.Component<any, any> {
     state = {
@@ -59,11 +61,11 @@ class Form extends React.Component<any, any> {
         },
 
         genders: [
-            { value: 0, label: "Woman" },
-            { value: 1, label: "Man" },
-            { value: 2, label: "Transgender" },
-            { value: 3, label: "Non-binary/non-conforming" },
-            { value: 4, label: "Prefer not to respond" },
+            { value: 1, label: "Woman" },
+            { value: 2, label: "Man" },
+            { value: 3, label: "Transgender" },
+            { value: 4, label: "Non-binary/non-conforming" },
+            { value: 5, label: "Prefer not to respond" },
         ],
         countries: [
             { value: 0, label: "Afghanistan" },
@@ -269,6 +271,8 @@ class Form extends React.Component<any, any> {
         secondStep: false,
         trigger: false,
         counter: 0,
+        showSuccessModal: false,
+        showFailedModal: false,
     };
 
     selectCountry = (val: any) => {
@@ -300,10 +304,11 @@ class Form extends React.Component<any, any> {
     };
     handleFirstStep = (e: { preventDefault: () => void }) => {
         e.preventDefault();
-        const { firstName, lastName } = this.state.form;
+        const { firstName, lastName, address } = this.state.form;
         const form: any = {
             firstName: firstName.value,
             lastName: lastName.value,
+            address: address.value,
         };
         const errors = {} as any;
         const formData = new FormData();
@@ -348,6 +353,12 @@ class Form extends React.Component<any, any> {
                     errors: ["MUST_BE_SHORTER_THAN_25"],
                 };
             }
+            if (e === "address" && address.value.length > 25) {
+                errors[e] = {
+                    value: form[e].value,
+                    errors: ["MUST_BE_SHORTER_THAN_25"],
+                };
+            }
         });
         if (Object.keys(errors).length !== 0) {
             this.setState((prevState: { form: any }) => ({
@@ -372,6 +383,8 @@ class Form extends React.Component<any, any> {
             lastName,
             gender,
             country,
+            address,
+            termsAndConditions,
         } = this.state.form;
         const form: any = {
             password: password.value,
@@ -382,12 +395,13 @@ class Form extends React.Component<any, any> {
             lastName: lastName.value,
             gender: gender.value,
             country: country.value,
+            address: address.value,
+            termsAndConditions,
         };
         const errors = {} as any;
-        const formData = new FormData();
 
         Object.keys(form).forEach((e) => {
-            if (!form[e]) {
+            if (!form[e] && e !== "gender" && e !== "country") {
                 errors[e] = {
                     value: form[e],
                     errors: ["INPUT_REQUIRED"],
@@ -420,7 +434,9 @@ class Form extends React.Component<any, any> {
                 };
             }
         });
-
+        if (!termsAndConditions) {
+            this.setState({ showFailedModal: true });
+        }
         if (Object.keys(errors).length !== 0) {
             this.setState((prevState: { form: any }) => ({
                 form: {
@@ -433,25 +449,36 @@ class Form extends React.Component<any, any> {
                 form: {
                     ...prevState.form,
                 },
+                showSuccessModal: !prevState.showSuccessModal,
             }));
             // this.submitApplication(form);
         }
     };
 
-    submitApplication = (form: any) => {
-        return new Promise((fulfill, reject) => {
-            //success
-            setTimeout(
-                (this.handleSubmit = () => {
-                    fulfill({
-                        info: {
-                            success: true,
-                        },
-                    });
-                }),
-                1000
-            );
-        });
+    // submitApplication = (e: { preventDefault: () => void }) => {
+    //     e.preventDefault();
+    //     return new Promise((fulfill, reject) => {
+    //         //success
+    //         setTimeout(
+    //             (this.toggleModal = () => {
+    //                 fulfill({
+    //                     info: {
+    //                         success: true,
+    //                     },
+    //                 });
+    //             }
+    //             ),
+    //             1000
+    //         );
+    //     });
+    // };
+    toggleModal = (name: string | number) => {
+        this.setState((prevState: any) => ({
+            [name]: !prevState[name],
+        }));
+        if (name === "showSuccessModal") {
+            window.location.reload();
+        }
     };
 
     render() {
@@ -459,13 +486,42 @@ class Form extends React.Component<any, any> {
         // const styles = {
         //     transform: `translate(-${counter * 50}%)`,
         // };
-
         return (
             <div>
+                <Modal
+                    toggleModal={this.toggleModal}
+                    modalName="showSuccessModal"
+                    className={this.state.showSuccessModal ? "visible" : ""}
+                    modalWrapperClasses="w-400 padding-10"
+                >
+                    <ModalContent
+                        type="success"
+                        title="SUCCESSFULLY_REGISTERED"
+                        text={"CONGRATULATIONS"}
+                        modalName="showSuccessModal"
+                        toggleModal={this.toggleModal}
+                    />
+                </Modal>
+                <Modal
+                    toggleModal={this.toggleModal}
+                    modalName="showFailedModal"
+                    className={
+                        this.state.showFailedModal ? "visible error" : "error"
+                    }
+                    modalWrapperClasses="w-500 padding-10"
+                >
+                    <ModalContent
+                        type="failure"
+                        title="FAILED"
+                        text={"TERMS_MANDATORY"}
+                        modalName="showFailedModal"
+                        toggleModal={this.toggleModal}
+                    />
+                </Modal>
                 <div className="d-flex h-vh-100     align-items-center justify-content-center ">
                     <CustomForm className="d-flex flex-column align-items-center justify-content-between registrationForm">
                         <div className="d-flex flex-column align-items-center  w-100perc ">
-                            <span className="title">
+                            <span className="titleWelcome">
                                 <Translate text="WELCOME" />
                             </span>
                             <div className="animcon" id="animcon">
@@ -537,6 +593,7 @@ class Form extends React.Component<any, any> {
                                             handleInput={this.handleInput}
                                             value={form.address.value}
                                             errors={form.address.errors}
+                                            required
                                         />
                                     </div>
                                     <div className="w-100perc mb-30">
@@ -665,7 +722,7 @@ class Form extends React.Component<any, any> {
                                     onClick={
                                         !secondStep
                                             ? this.handleFirstStep
-                                            : this.submitApplication
+                                            : this.handleSubmit
                                     }
                                     className={secondStep ? "btn-create" : ""}
                                 >

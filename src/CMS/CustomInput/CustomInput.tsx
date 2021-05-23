@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { isEmpty, validateNumber } from "./inputValidations/InputValidations";
-// import {
-//     AtSignIcon,
-//     AwardIcon,
-//     PhoneIcon,
-//     ShowPasswordIcon,
-// } from "../../../components/Icons/Icons";
-// import Translate from "../../functions/utilFunctions/translate";
 import { useFormContext } from "../CustomForm/CustomForm";
 import {
     lettersOnlyValidation,
@@ -102,38 +95,7 @@ const _csi = React.forwardRef<HTMLInputElement, ICustomInput>(
                 }
             }
         };
-        // const generateIcon = () => {
-        //     if (icon) {
-        //         switch (name) {
-        //             case "email":
-        //                 return (
-        //                     <span>
-        //                         <AtSignIcon width={20} className={"icon"} />
-        //                     </span>
-        //                 );
-        //             case "phone":
-        //                 return (
-        //                     <span>
-        //                         <PhoneIcon width={20} className={"icon"} />
-        //                     </span>
-        //                 );
-        //             case "points_scored":
-        //                 return (
-        //                     <span>
-        //                         <AwardIcon width={15} className="iconPoints" />
-        //                     </span>
-        //                 );
-        //             case "points":
-        //                 return (
-        //                     <span>
-        //                         <AwardIcon width={15} className="iconPoints" />
-        //                     </span>
-        //                 );
-        //             default:
-        //                 break;
-        //         }
-        //     }
-        // };
+
         const { t } = useTranslation();
 
         return (
@@ -169,10 +131,6 @@ const _csi = React.forwardRef<HTMLInputElement, ICustomInput>(
                             />
                         </span>
                     )}
-                    {
-                        // console.log(icon)
-                        // generateIcon()
-                    }
                 </div>
                 {errors?.map((e: any, i: any) => (
                     <span

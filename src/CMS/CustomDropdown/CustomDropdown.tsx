@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import CreatableSelect from "react-select/creatable";
 import Translate from "../../functions/translate";
 
 interface IHandleInputProps {
@@ -8,7 +7,7 @@ interface IHandleInputProps {
     errors: Array<string>;
 }
 
-export interface IData {
+interface IData {
     value: string | number;
     label: string | JSX.Element;
 }
@@ -32,8 +31,6 @@ interface ICustomDropdown {
     multiple?: boolean;
     label?: string;
     labelClass?: string;
-    filter?: boolean;
-    creatable?: boolean;
 }
 
 const _cdd: React.FC<ICustomDropdown> = ({
@@ -49,8 +46,6 @@ const _cdd: React.FC<ICustomDropdown> = ({
     label,
     labelClass,
     multiple,
-    filter,
-    creatable,
 }) => {
     const handleValueChange = (
         n: string,
@@ -76,83 +71,46 @@ const _cdd: React.FC<ICustomDropdown> = ({
                 (Array.isArray(value) && value.length > 0)
                     ? "noValue"
                     : ""
-            } ${disabled ? "disabled" : ""} ${multiple ? "multiple" : ""} ${
-                filter ? "filter" : ""
-            }
-            `}
+            } ${disabled ? "disabled" : ""} ${multiple ? "multiple" : ""}`}
         >
-            {creatable ? (
-                <CreatableSelect
-                    className={`basic-single ${className ? className : ""} ${
-                        disabled ? "disabled" : ""
-                    }`}
-                    classNamePrefix="select"
-                    isSearchable={true}
-                    name="color"
-                    options={data}
-                    noDataRenderer={"Nema rezultata"}
-                    onChange={(e: { value: any }) => {
-                        handleValueChange(
-                            name,
-                            !multiple ? e.value : e,
-                            index,
-                            multiple
-                        );
-                        handleLabelChange(false);
-                    }}
-                    // onInputChange={(newValue: any) => {
-                    //     console.log(typeof newValue);
-                    // }}
-                    placeholder={placeholder}
-                    menuPlacement="auto"
-                    value={value}
-                    isDisabled={disabled}
-                    onFocus={() => handleLabelChange(true)}
-                    onBlur={() => handleLabelChange(false)}
-                    isMulti={multiple}
-                />
-            ) : (
-                <Select
-                    className={`basic-single ${className ? className : ""} ${
-                        disabled ? "disabled" : ""
-                    }`}
-                    classNamePrefix="select"
-                    isSearchable={true}
-                    name="color"
-                    options={data}
-                    noDataRenderer={"Nema rezultata"}
-                    onChange={(e: { value: any }) => {
-                        handleValueChange(
-                            name,
-                            !multiple ? e.value : e,
-                            index,
-                            multiple
-                        );
-                        handleLabelChange(false);
-                    }}
-                    placeholder={placeholder}
-                    menuPlacement="auto"
-                    value={value}
-                    isDisabled={disabled}
-                    onFocus={() => handleLabelChange(true)}
-                    onBlur={() => handleLabelChange(false)}
-                    isMulti={multiple}
-                    // menuIsOpen
-                />
-            )}
-            {label && (
-                <label
-                    className={`${labelClass ? labelClass : "f-s-16"} ${
-                        (!Array.isArray(value) && value?.value !== 0) ||
-                        (Array.isArray(value) && value.length > 0) ||
-                        showLabel
-                            ? "top"
-                            : ""
-                    } ${disabled ? "disabled" : ""}`}
-                >
-                    <Translate text={label} />
-                </label>
-            )}
+            <Select
+                className={`basic-single ${className ? className : ""} ${
+                    disabled ? "disabled" : ""
+                }`}
+                classNamePrefix="select"
+                isSearchable={true}
+                name="color"
+                options={data}
+                noDataRenderer={"Nema rezultata"}
+                onChange={(e: { value: any }) => {
+                    handleValueChange(
+                        name,
+                        !multiple ? e.value : e,
+                        index,
+                        multiple
+                    );
+                    handleLabelChange(false);
+                }}
+                placeholder={placeholder}
+                menuPlacement="auto"
+                value={value}
+                isDisabled={disabled}
+                onFocus={() => handleLabelChange(true)}
+                onBlur={() => handleLabelChange(false)}
+                isMulti={multiple}
+                // menuIsOpen
+            />
+            <label
+                className={`${labelClass ? labelClass : "f-s-16"} ${
+                    (!Array.isArray(value) && value?.value !== 0) ||
+                    (Array.isArray(value) && value.length > 0) ||
+                    showLabel
+                        ? "top"
+                        : ""
+                } ${disabled ? "disabled" : ""}`}
+            >
+                <Translate text={label} />
+            </label>
             {errors?.map((e, i) => (
                 <span className="error f-s-12 is-warning danger p-10" key={i}>
                     <Translate text={e} />

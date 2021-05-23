@@ -7380,8 +7380,8 @@ body {
 .animcon {
   background-color: white;
   overflow: hidden;
-  height: 170px;
-  width: 170px;
+  height: 150px;
+  width: 150px;
   border-radius: 50%;
   background-image: url(https://raw.githubusercontent.com/naaficodes/Monkey-Login/master/images/monkey.gif);
   background-size: 90% 85%;
@@ -7402,7 +7402,7 @@ body {
 .formcon {
   margin-top: 38px; }
 
-.title {
+.titleWelcome {
   font-size: 30px;
   font-weight: 900;
   color: greenyellow;
