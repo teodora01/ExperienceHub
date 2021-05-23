@@ -1,0 +1,46 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    .thead {
+        tr {
+            border-top: 1px solid $background-d;
+            border-bottom: 1px solid $background-d;
+            height: 40px;
+        }
+    }
+
+    .tbody {
+        tr {
+            border-bottom: 1px solid $background;
+            transition: all 0.1s ease-in-out;
+            &:hover {
+                background-color: $background;
+            }
+            td {
+                padding: 2rem 1rem;
+                height: 50px;
+
+                &.autoHeight {
+                    padding: 3rem 1rem;
+                    height: auto;
+                    min-height: 50px;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+    .customThead {
+        border-top: none !important;
+        border-bottom: 2px solid $theme-main-1 !important;
+        color: $theme-main-1 !important;
+    }
+    .customerFilesThead {
+        border-top: none !important;
+    }
+}
+
+@media (max-width: 966px) {
+    .customThead {
+        font-size: 12px;
+    }
+}

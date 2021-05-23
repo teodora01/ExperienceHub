@@ -1,0 +1,131 @@
+$theme-main-1: #43425d;
+
+.modal {
+    background-color: #43425d98;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    left: 0;
+    transform: translateY(-100vh);
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+    .modalWrapper {
+        background-color: #ffffff;
+        border-radius: 12px;
+        &.successModal {
+            // background-color: #bdfbbdb3 !important;
+            // color: black;
+            color: green !important;
+        }
+        &.errorModal {
+            //background-color: #e21212b3 !important;
+            //color: black;
+            color: red !important;
+        }
+
+        &.crpsModal {
+            height: 700px;
+            overflow-y: auto;
+        }
+    }
+
+    &.visible {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    &.error {
+        z-index: 999999;
+    }
+}
+@keyframes slideInRight {
+    from {
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        opacity: 0;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+.slideInRight {
+    animation-name: slideInRight;
+}
+.animated {
+    animation-fill-mode: forwards;
+
+    &.linear {
+        animation-timing-function: linear;
+    }
+    &.speed-0-5-s {
+        animation-duration: 0.5s;
+    }
+
+    &.speed-1-s {
+        animation-duration: 1s;
+    }
+
+    &.speed-1-5-s {
+        animation-duration: 1.5s;
+    }
+
+    &.delay-0-5-s {
+        animation-delay: 0.5s;
+    }
+
+    &.delay-1-5-s {
+        animation-delay: 1.5s;
+    }
+}
+
+.modal-content {
+    .title {
+        font-size: 16px;
+        font-weight: 700;
+        border-bottom: 1px solid #d1d1d4;
+    }
+
+    .modal-buttons {
+        border-top: 1px solid #d1d1d4;
+    }
+}
+.fileUploadModal {
+    width: 500px;
+    height: 300px;
+    .dropImage {
+        border-radius: 4px;
+        border: 2px dashed $background-d;
+        .uploadIcon {
+            path {
+                fill: $background-d;
+                opacity: 0.7;
+            }
+        }
+        &.dotted {
+            border: 2px dotted $background-d;
+            .uploadIcon {
+                path {
+                    fill: $background-d;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .progress {
+        background-color: white !important;
+        .wrapper {
+            position: relative;
+            .loader-numbers {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 20px;
+            }
+        }
+    }
+}

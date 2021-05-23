@@ -1,46 +1,46 @@
 /*******************************/
+@import "@fullcalendar/core/main.css";
+@import "@fullcalendar/daygrid/main.css";
+
+@import "./custom.css";
 /* ABSTRACTS                   */
 /*******************************/
+
 @import "abstracts/abstracts";
+
 /*******************************/
 /* INIT                        */
 /*******************************/
+
 @import "init/normalize";
 @import "init/init";
+
 /*******************************/
 /* LAYOUT                      */
-/******************************/
+/*******************************/
+
 @import "layout/layout";
+
 /*******************************/
 /* VENDORS                     */
 /*******************************/
+
 @import "vendors/datePicker";
+@import "vendors/countriesDropdown";
+
 /*******************************/
 /* COMPONENTS                  */
 /*******************************/
+
 @import "components/components";
+
 /*******************************/
 /* PAGES                       */
 /*******************************/
-@import "pages/global";
-@import "pages/sessions";
-@import "pages/taskPreview";
-@import "pages/tasks";
-// @import "pages/studentTasks";
-@import "pages/groupsOverview";
-@import "pages/groupDetails";
-@import "pages/editProfile";
-@import "pages/studentsOverview";
-@import "pages/coursesOverview";
-@import "pages/editProfile";
-//@import "pages/studentSessions";
-@import "pages/studentGroups";
-@import "pages/chat";
-@import "pages/deskOfficerStudentDebt";
-@import "pages/deskOfficerReports";
 
-/********************************/
+/*******************************/
 /* UTILS                       */
 /*******************************/
 @import "utils/utils";
 @import "utils/fonts";
+@import "registrationForm/registrationForm";

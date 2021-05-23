@@ -1,0 +1,138 @@
+.inputComponent {
+    .inputWrapper {
+        position: relative;
+        line-height: 1;
+
+        input {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            outline: none;
+            height: 45px;
+            width: 100%;
+            border-radius: 20px;
+            border: none;
+            color: #5a5449;
+            outline: none;
+            padding: 0 1rem;
+            font-size: 1.6rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1;
+            color: $theme-main-7;
+            &.pinInput {
+                width: 40px;
+                padding: 0;
+                text-align: center;
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+            &:focus {
+                ~ label {
+                    font-size: 1.2rem;
+                    top: 0;
+                    color: $theme-main-7;
+                }
+            }
+        }
+
+        .showPassword {
+            position: absolute;
+            right: 1rem;
+            z-index: 2;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            path {
+                fill: $background-d;
+                transition: all 0.1s ease-in-out;
+            }
+            &:hover {
+                path {
+                    fill: darken($background-d, 10%);
+                }
+            }
+            &.active {
+                path {
+                    fill: $theme-main-1;
+                }
+                &:hover {
+                    path {
+                        fill: lighten($theme-main-1, 20%);
+                    }
+                }
+            }
+        }
+
+        label {
+            position: absolute;
+            top: 50%;
+            left: 0.5rem;
+            transform: translateY(-50%);
+            font-size: 1.3rem;
+            // background: $white;
+            transition: all 0.2s ease-in-out;
+            z-index: 2;
+            display: block;
+            cursor: text;
+            padding: 0.5rem 0.5rem;
+            color: $theme-main-7;
+            pointer-events: none;
+            line-height: 1;
+            // &.label-xs {
+            //     font-size: 0.6rem !important;
+            // }
+            // &.label-s {
+            //     font-size: 1rem !important;
+            //     padding: 0.5rem 0.1rem !important;
+            // }
+        }
+
+        .count {
+            position: absolute;
+            right: 0.5rem;
+            top: 100%;
+            transform: translateY(-10px);
+            z-index: 2;
+            background-color: $white;
+
+            color: $theme-main-1;
+            line-height: 1;
+        }
+
+        &.hasText {
+            label {
+                font-size: 1.2rem;
+                top: 0;
+                color: $theme-main-7;
+            }
+        }
+    }
+
+    .error {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        padding-left: 10px;
+        &.error-s {
+            font-size: 10px !important;
+            font-weight: 600 !important;
+            padding-left: 6px !important;
+        }
+        &.error-xs {
+            font-size: 8px !important;
+            font-weight: 500 !important;
+            padding-left: 6px;
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}

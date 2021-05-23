@@ -1,0 +1,66 @@
+.fileUploadProgressList {
+    position: fixed;
+    bottom: -100%;
+    left: 110px;
+    width: 700px;
+    max-width: 90%;
+    background-color: white;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    overflow: hidden;
+    border: 1px solid $background-d;
+    transition: all 0.2s ease-in-out;
+    &.visible {
+        bottom: 0;
+    }
+    &.hidden {
+        transform: translateY(calc(100% - 50px));
+    }
+    .bar {
+        height: 50px;
+        background-color: $background;
+        .completed {
+            background-color: $theme-main-1;
+            color: $white;
+            padding: 0.3rem;
+            width: 75px;
+            border-radius: 4px;
+        }
+        .rightSide {
+            line-height: 0;
+        }
+        .arrowUpload {
+            path {
+                fill: $white;
+            }
+        }
+    }
+    .items {
+        max-height: 250px;
+        overflow-y: auto;
+        transition: all 0.5s ease-in-out;
+        .item {
+            .arrowUpload {
+                path {
+                    fill: $theme-main-1;
+                }
+            }
+            height: 50px;
+            border-bottom: 1px solid $background;
+            position: relative;
+            .progressBar {
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 3px;
+                background-color: $theme-main-2;
+                border-radius: 4px;
+                &.completed {
+                    background-color: $theme-main-1;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+.registrationForm {
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    // height: 650px;
+    background: white;
+    width: 450px;
+    background: white;
+}
+
+body {
+    // background: url(https://raw.githubusercontent.com/naaficodes/Monkey-Login/master/images/monkeybg.png)
+    //     #1b8c1b66;
+    // background: url(https://i.pinimg.com/736x/83/d6/03/83d60358a3c1e262a2a9f49697d193bc.jpg);
+    background: url(https://cdn4.vectorstock.com/i/1000x1000/08/98/monkeys-living-in-forest-vector-7830898.jpg);
+    // background-size: 5%;
+    background-size: 100%;
+}
+.maincontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.monkeylogin {
+    width: 350px;
+    height: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 40px;
+}
+.animcon {
+    background-color: white;
+    overflow: hidden;
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    background-image: url(https://raw.githubusercontent.com/naaficodes/Monkey-Login/master/images/monkey.gif);
+    background-size: 90% 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.animcon img {
+    margin-top: 110%;
+    height: 170px;
+    width: 170px;
+    transition: 1s;
+}
+
+.formcon {
+    margin-top: 38px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 900;
+    color: greenyellow;
+    font-family: sans-serif;
+}
+
+.icon {
+    fill: greenyellow;
+}
+
+.terms {
+    line-height: 1;
+    color: $theme-main-7;
+    font-size: 1.4rem;
+}

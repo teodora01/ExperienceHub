@@ -1,0 +1,105 @@
+.customDropdown {
+    label {
+        position: absolute;
+        top: 50%;
+        left: 0.5rem;
+        transform: translateY(-50%);
+        font-size: 1.3rem;
+        background: $white;
+        transition: all 0.2s ease-in-out;
+        z-index: 2;
+        display: block;
+        cursor: text;
+        padding: 0.5rem 0.5rem;
+        color: $theme-main-7;
+        pointer-events: none;
+        line-height: 1;
+        &.top {
+            font-size: 1.2rem;
+            top: 0;
+            color: $theme-main-7;
+        }
+        &.disabled {
+            font-size: 1.2rem;
+            top: 0;
+            background: white;
+            color: $light-3;
+        }
+    }
+    &.noValue {
+        .select__single-value {
+            opacity: 0;
+        }
+    }
+}
+
+.select__value-container,
+.css-g1d714-ValueContainer {
+    height: 45px !important;
+}
+.select__control {
+    width: 100%;
+    cursor: pointer !important;
+    height: 45px;
+    border: none !important;
+    border-radius: 30px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    font-size: 13px;
+}
+.css-yk16xz-control {
+    height: 45px !important;
+    border: none !important;
+    border-radius: 30px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.select__indicator-separator,
+.css-1okebmr-indicatorSeparator {
+    display: none !important;
+}
+
+.select__multi-value {
+    background-color: transparent !important;
+}
+
+.select__placeholder {
+    color: $theme-main-7 !important;
+}
+
+.select__indicator-separator {
+    background-color: $theme-main-6 !important;
+}
+
+.select__option--is-selected {
+    background-color: $theme-main-1 !important;
+    font-size: 15px;
+}
+
+.select__control--is-focused {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+    outline: none;
+    border: none !important;
+}
+
+.select__control--is-disabled {
+    opacity: 0.7;
+    background-color: transparent !important;
+    border: 1px solid $light-3 !important;
+    .select__indicator-separator {
+        background-color: $light-3 !important;
+    }
+    .select__placeholder {
+        color: $light-3 !important;
+    }
+}
+
+.select__menu {
+    z-index: 99 !important;
+}
+
+.select__single-value {
+    font-size: 13px;
+}
+
+.select__option {
+    font-size: 14px !important;
+}

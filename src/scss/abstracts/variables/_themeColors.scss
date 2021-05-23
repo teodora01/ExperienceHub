@@ -1,109 +1,67 @@
-$theme-main-1: var(--theme-main-1);
-$theme-main-1-d: var(--theme-main-1-d-10);
-$theme-main-1-d-10: var(--theme-main-1-d-10);
-$theme-main-1-d-15: var(--theme-main-1-d-15);
-$theme-main-1-d-20: var(--theme-main-1-d-20);
-$theme-main-1-d-25: var(--theme-main-1-d-25);
-$theme-main-1-l-20: var(--theme-main-1-l-20);
-$theme-main-1-l-30: var(--theme-main-1-l-30);
-$theme-main-1-l-50: var(--theme-main-1-l-50);
+// Theme colors
+$theme-main-1: #43425d;
+$theme-main-1-d: darken($theme-main-1, 10%);
 
-$theme-main-3: var(--theme-main-3);
-$theme-main-4: var(--theme-main-4);
-$theme-main-4-d-10: var(--theme-main-4-d-10);
-$theme-main-5: var(--theme-main-5);
-$theme-main-6: var(--theme-main-6);
-$theme-main-6-d-10: var(--theme-main-6-d-10);
-$theme-main-7: var(--theme-main-7);
-$theme-main-8: var(--theme-main-8);
-$theme-main-10: var(--theme-main-10);
-$theme-main-11: var(--theme-main-11);
-$theme-light-2: var(--theme-light-2);
-$theme-bg-light: var(--theme-bg-light);
-$blue-10: var(--blue-10);
-$background: var(--background);
-$background-d: var(--background-d-10);
+$theme-main-2: #e69757;
+$theme-main-2-d: darken($theme-main-2, 10%);
+
+$theme-main-3: #0d70a0;
+$theme-main-4: #064976;
+$theme-main-5: #01325f;
+$theme-main-6: #43425d;
+$theme-main-7: #4d4f5c;
+
+$theme-light-2: #d5f1ff;
+
+$theme-bg-light: #f1f2f3;
+
+$background: #efefff;
+$background-d: darken($background, 10%);
+
 $themeGradient: linear-gradient(245deg, #fad961 0%, #f76b1c 100%);
-//HUB
-$light-1: var(--light-1);
-$light-1-d-10: var(--light-1-d-10);
-$light-1-d-30: var(--light-1-d-30);
-$light-2: var(--light-2);
-$light-3: var(--light-3);
-$light-4: var(--light-4);
-$light-5: var(--light-5);
-$light-6: var(--light-6);
-$light-7: var(--light-7);
-$light-8: var(--light-8);
-$light-8-d-10: var(--light-8-d-10);
-$light-8-d-15: var(--light-8-d-15);
-$light-8-d-20: var(--light-8-d-20);
-$light-8-d-30: var(--light-8-d-30);
-$light-8-d-40: var(--light-8-d-40);
-$light-8-d-50: var(--light-8-d-50);
-$light-8-d-60: var(--light-8-d-60);
-$light-9: var(--light-9);
-$light-9-d-5: var(--light-9-d-5);
-$light-9-d-10: var(--light-9-d-10);
-$light-10: var(--light-10);
-$light-10-d-10: var(--light-10-d-10);
-$light-11: var(--light-11);
-$light-11-d-10: var(--light-11-d-10);
 
-$dark-1: var(--dark-1);
-$dark-2: var(--dark-2);
-$dark-3: var(--dark-3);
-$dark-4: var(--dark-4);
-$dark-5: var(--dark-5);
-$dark-6: var(--dark-6);
-$dark-5-d-10: var(--dark-5-d-10);
+// Colors used for background
+$dark-1: #424242;
+$dark-2: #212121;
+$dark-3: #181818;
+$dark-4: #404040;
+
+$light-1: #616161;
+$light-2: #7f7f7f;
+$light-3: #9e9e9e;
+$light-4: #e0e0e0;
+$light-5: #fafafa;
+$light-6: #f2f2f2;
+$light-7: #d9d9d9;
+
 // Colors for specific use cases
-$important-1: var(--important-1);
-$important-2: var(--important-2);
-$important-2-d-10: var(--important-2-d-10);
-$important-2-d-20: var(--important-2-d-20);
-$important-3: var(--important-3);
-$important-4: var(--important-4);
-$important-4-d-10: var(--important-4-d-10);
-$important-4-d-20: var(--important-4-d-20);
-$important-5: var(--important-5);
+$important-1: #ffc107;
+$important-2: #fcae53;
+$important-3: #ff5722;
+$important-4: #f44336;
+$important-5: #ff0000;
 
-$info-1: var(--info-1);
-$info-2: var(--info-2);
-$info-3: var(--info-3);
-$info-4: var(--info-4);
-$info-4-d-10: var(--info-4-d-10);
-$info-4-d-20: var(--info-4-d-20);
-$info-5: var(--info-5);
+$info-1: #31b3e5;
+// $info-2: #00c47b;
+$info-2: #598d82;
+$info-3: #74b560;
+$info-4: #00c47b;
+$info-5: #00b300;
+
 // Colors for session preview tab
-$boja-1: var(--boja-1);
-$boja-2: var(--boja-2);
-$boja-3: var(--boja-3);
-//Datepicker
-$datepickerColor: var(--datepickerColor);
-//BLUE ADDED:
-$white: var(--white);
-$white-l: var(--white-l);
-$font: var(--font);
-$font-l: var(--font-l);
-$font-l-d-40: var(--font-l-d-40);
-//HUB V2 Colors
-$text-default: var(--text-default);
-$v2-light-1: var(--v2-light-1);
-$dark-grey: var(--dark-grey);
-$dark-grey-d-10: var(--dark-grey-d-10);
-$dark-grey-d-20: var(--dark-grey-d-20);
 
-$light-blue-1: var(--light-blue-1);
-$light-blue-2: var(--light-blue-2);
-$light-blue-3: var(--light-blue-3);
-$dark-blue-2: var(--dark-blue-2);
-$dark-blue-3: var(--dark-blue-3);
-$dark-green: var(--dark-green);
-$dark-green-1: var(--dark-green-1);
-$dark-green-1-d-10: var(--dark-green-1-d-10);
-$dark-green-1-d-20: var(--dark-green-1-d-20);
-$dark-orange-1: var(--dark-orange-1);
-// $black: var(--black);
-// $black-2: var(--black-2);
-// $transparent-white: var(--transparent-white);
+$boja-1: #d3dbff;
+$boja-2: #848ccf;
+$boja-3: #f1e3cb;
+
+//Datepicker
+$datepickerColor: #e11d74;
+
+//BLUE ADDED:
+$blue-10: #1071b8;
+$light-6: #f2f2f2;
+
+$white: #ffffff;
+$white-l: rgba($white, 0.5);
+$font: #333333;
+$font-l: #868686;

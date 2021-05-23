@@ -80,10 +80,6 @@
     left: 0;
 }
 
-.left-40 {
-    left: 40%;
-}
-
 .left-50 {
     left: 50%;
 }
@@ -882,14 +878,6 @@
     opacity: 1;
 }
 
-.opacity-50-perc {
-    opacity: 0.5;
-}
-
-.opacity-80-perc {
-    opacity: 0.8;
-}
-
 .rotate-180 {
     transform: rotate(180deg);
     transform-origin: center;
@@ -901,20 +889,16 @@
 
 .warningIcon {
     path {
-        fill: $theme-main-1;
+        fill: $important-4;
     }
 }
 
 .successIcon {
     path {
-        fill: $dark-green;
+        fill: $info-4;
     }
 }
-.questionMarkIcon {
-    path {
-        fill: $dark-grey;
-    }
-}
+
 .theme2Icon {
     path {
         fill: $theme-main-1;
@@ -928,47 +912,12 @@
     &.hover {
         &:hover {
             path {
-                fill: $font-l-d-40;
+                fill: darken($font-l, 40%);
             }
         }
     }
 }
 
-.blackFill {
-    path {
-        fill: #000000;
-    }
-}
-
-.whiteFill {
-    path {
-        fill: white;
-    }
-}
-
 .lh {
     line-height: 1;
-}
-
-.overflow-y-auto {
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-.overflow-x-hidden {
-    overflow-x: hidden;
-}
-
-.overflow-x-auto {
-    overflow-y: hidden;
-    overflow-x: auto;
-}
-
-.iconHoverImportant {
-    &:hover {
-        path {
-            fill: $important-5;
-            stroke: $important-5;
-        }
-    }
 }

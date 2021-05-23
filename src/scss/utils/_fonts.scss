@@ -12,7 +12,6 @@ $fontSizes: (
     20,
     22,
     24,
-    25,
     26,
     28,
     30,
@@ -63,10 +62,6 @@ $fontWeights: (100, 200, 300, 400, 500, 600, 700, 800, 900);
     color: $white;
 }
 
-.text-color-black {
-    color: #333333 !important;
-}
-
 .text-color-white-l {
     color: $white-l;
 }
@@ -79,10 +74,6 @@ $fontWeights: (100, 200, 300, 400, 500, 600, 700, 800, 900);
     color: $background-d;
 }
 
-.text-color-font-l3 {
-    color: $theme-main-8;
-}
-
 .warning {
     color: $important-2;
 }
@@ -91,14 +82,9 @@ $fontWeights: (100, 200, 300, 400, 500, 600, 700, 800, 900);
     color: $important-4;
 }
 
-.dark-grey {
-    color: $dark-grey;
-}
-
 .important-3 {
     color: $important-3;
 }
-
 .info-5 {
     color: $info-5;
 }
@@ -106,35 +92,6 @@ $fontWeights: (100, 200, 300, 400, 500, 600, 700, 800, 900);
 .important-1 {
     color: $important-1;
 }
-
-.dark-5 {
-    color: $dark-5;
-}
-
-.light-1 {
-    color: $light-1;
-}
-
-.light-3 {
-    color: $light-3;
-}
-
-.light-6 {
-    color: $light-6;
-}
-
-.light-8 {
-    color: $light-8;
-}
-
-.tm-7 {
-    color: $theme-main-7;
-}
-
-.light-8d {
-    color: $light-8-d-40;
-}
-
 // Style for text properties
 .text-center {
     text-align: center;
@@ -228,14 +185,6 @@ $fontWeights: (100, 200, 300, 400, 500, 600, 700, 800, 900);
     word-break: break-all;
 }
 
-.text-nowrap {
-    white-space: nowrap !important;
-}
-
-.bold-600 {
-    font-weight: 600;
-}
-
 .bold {
     font-weight: 700;
 }
@@ -246,31 +195,23 @@ $fontWeights: (100, 200, 300, 400, 500, 600, 700, 800, 900);
 
 .custom-link {
     &:link {
-        color: $dark-5;
+        color: $theme-main-2;
         text-decoration: none;
     }
 
     &:visited {
-        color: $dark-5;
+        color: $theme-main-2;
         text-decoration: none;
     }
 
     &:hover {
         text-decoration: none;
-        color: $light-blue-2;
+        font-size: 1.1em;
+        color: $theme-main-4;
     }
 
     &:active {
-        color: $dark-5;
+        color: $theme-main-2;
         text-decoration: none;
     }
-}
-
-.link-unset {
-    text-decoration: unset;
-    color: unset;
-}
-
-.underline {
-    text-decoration: underline;
 }

@@ -1,44 +1,98 @@
 {
-  "name": "experience-hub",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/react-router-dom": "^5.1.7",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-i18next": "^11.8.15",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.2.4",
-    "web-vitals": "^1.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
+    "name": "testing",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@fullcalendar/core": "^5.4.0",
+        "@fullcalendar/daygrid": "^5.4.0",
+        "@fullcalendar/interaction": "^5.4.0",
+        "@fullcalendar/react": "^5.4.0",
+        "@fullcalendar/timegrid": "^5.4.0",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "@types/jest": "^24.0.0",
+        "@types/node": "^12.0.0",
+        "@types/react": "^16.9.0",
+        "@types/react-dom": "^16.9.0",
+        "@types/react-router-dom": "^5.1.6",
+        "add": "^2.0.6",
+        "autoprefixer": "^9.8.6",
+        "axios": "^0.21.1",
+        "chai": "^4.2.0",
+        "concurrently": "^5.3.0",
+        "cssnano": "^4.1.7",
+        "date-fns": "^2.16.1",
+        "glob": "^7.1.6",
+        "i18next": "^19.9.1",
+        "node-sass": "^5.0.0",
+        "npm-run-all": "^4.1.3",
+        "postcss": "^8.0.2",
+        "postcss-cli": "^8.1.0",
+        "prettier": "^2.2.1",
+        "react": "^17.0.1",
+        "react-country-region-selector": "^3.1.0",
+        "react-date-picker": "^8.0.3",
+        "react-datetime-picker": "^3.0.4",
+        "react-dom": "^17.0.1",
+        "react-i18next": "^11.8.8",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "3.4.4",
+        "react-select": "^3.1.0",
+        "react-time-ago": "^6.2.2",
+        "typescript": "^3.9.5",
+        "yarn": "^1.22.10"
+    },
+    "scripts": {
+        "watch": "node-sass ./src/scss/main.scss ./public/css/style.css -w --source-map true",
+        "watch:min": "node-sass ./src/scss/main.scss ./public/css/style.min.css -w --output-style compressed",
+        "prefx": "postcss --use autoprefixer -b \"last 10 versions\" ./public/css/style.css -o ./public/css/style.css --no-map",
+        "prefx:min": "postcss --use autoprefixer -b \"last 10 versions\" ./public/css/style.min.css -o ./public/css/style.min.css --no-map",
+        "build:compile": "node-sass ./src/scss/main.scss ./public/css/style.css --source-map true && node-sass ./src/scss/main.scss ./public/css/style.min.css --output-style compressed",
+        "build:autoprefix": "npm run prefx && npm run prefx:min",
+        "build-css": "run-s build:**",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "cross-env CI=true react-scripts test --env=jsdom",
+        "eject": "react-scripts eject",
+        "dev": "concurrently \"yarn build-css\" \"yarn start\" \"yarn watch\"",
+        "production": "npm run build-css && npm run build",
+        "lint": "eslint src --ext ts --ext tsx --fix"
+    },
+    "eslintConfig": {
+        "extends": "react-app",
+        "rules": {
+            "@typescript-eslint/no-unused-vars": [
+                "error",
+                {
+                    "vars": "all",
+                    "args": "after-used",
+                    "ignoreRestSiblings": false
+                }
+            ],
+            "array-callback-return": "error"
+        }
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@types/filesystem": "^0.0.29",
+        "@types/react-select": "^4.0.15",
+        "@types/sortablejs": "^1.10.6",
+        "@types/wicg-file-system-access": "^2020.9.1",
+        "husky": "^5.1.3"
+    },
+    "sideEffects": [
+        "./src/i18n/i18n.tsx"
     ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@types/react": "^17.0.6"
-  }
 }

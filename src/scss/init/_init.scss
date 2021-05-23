@@ -1,8 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
-$fontHeader: "Ubuntu", sans-serif;
-$fontContent: "Poppins", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
 html {
     font-size: 62.5%;
@@ -42,7 +38,7 @@ body {
 
     position: relative;
 
-    font-family: $fontContent;
+    font-family: Poppins, "sans-serif";
 }
 
 body.noScroll {
@@ -62,20 +58,20 @@ body.noScroll {
 
 main {
     &.app {
-        margin-left: 120px;
-        background: white;
-        padding: 20px 5px;
-        //! dodat min height 100vh da bi loader uvjek bio centriran
-        height: 100%;
-        min-height: 100vh;
+        margin-top: 50px;
+        margin-left: 70px;
+        min-height: calc(100vh - 50px);
+        width: calc(100% - 70px);
+        background: $background;
+        padding: 2rem;
     }
-    // .content {
-    //     background: $white;
-    //     min-height: calc(100vh - 90px);
-    //     border-radius: 8px;
-    //     padding: 4rem 2rem;
-    //     position: relative;
-    // }
+    .content {
+        background: $white;
+        min-height: calc(100vh - 90px);
+        border-radius: 8px;
+        padding: 4rem 2rem;
+        position: relative;
+    }
 }
 
 ::-webkit-scrollbar {
@@ -93,8 +89,8 @@ main {
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 4px;
     border-radius: 4px;
-    background: $theme-main-1-l-20;
+    background: lighten($theme-main-1, 20%);
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-    background: $theme-main-1-l-20;
+    background: lighten($theme-main-1, 20%);
 }

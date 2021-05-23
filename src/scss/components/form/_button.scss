@@ -1,0 +1,201 @@
+.btn {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    max-height: 50px;
+    padding: 1rem 2rem;
+    outline: none;
+    font-size: 15px;
+    border: 1px solid yellow;
+    color: brown;
+    background: yellow;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    width: 150px;
+    &.btn-primary {
+        background-color: $theme-main-1;
+        color: $white;
+        &:hover {
+            background-color: darken($theme-main-1, 10%);
+        }
+        &:active {
+            background-color: darken($theme-main-1, 20%);
+        }
+    }
+    &.btn-create {
+        background-color: greenyellow;
+        font-size: 15px;
+        font-weight: 600;
+        width: 150px;
+        color: $white;
+        border: none;
+        &:hover {
+            background-color: darken(greenyellow, 10%);
+        }
+        &:active {
+            background-color: darken(greenyellow, 20%);
+        }
+    }
+
+    &.btn-header {
+        height: 30px;
+        border-radius: 30px;
+        background-color: darken($color: white, $amount: 5%) !important;
+        color: $font;
+        // border: 1px solid yellow;
+        border: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        &:hover {
+            background-color: darken($color: white, $amount: 10%) !important;
+            &.fill {
+                path {
+                    fill: $white;
+                }
+            }
+        }
+        svg {
+            path {
+                transition: all 0.2s ease-in-out;
+            }
+        }
+        &.fill {
+            path {
+                fill: rgba($theme-main-1, 0.4);
+            }
+        }
+    }
+    &.btn-header-active {
+        height: 30px;
+        border-radius: 30px;
+        background-color: darken($color: white, $amount: 10%) !important;
+        color: $font;
+        border: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        &:hover {
+            background-color: darken($color: white, $amount: 20%) !important;
+            &.fill {
+                path {
+                    fill: $white;
+                }
+            }
+        }
+        svg {
+            path {
+                transition: all 0.2s ease-in-out;
+            }
+        }
+        &.fill {
+            path {
+                fill: rgba($theme-main-1, 0.4);
+            }
+        }
+    }
+}
+
+.btn-save {
+    background-color: $theme-main-6 !important;
+    color: white !important;
+    width: 150px;
+    &:hover {
+        background-color: darken($theme-main-6, 10%) !important;
+        color: white;
+    }
+}
+.btn-back {
+    background-color: white !important;
+    color: #43425d !important;
+    &:hover {
+        background-color: $theme-main-6 !important;
+        color: white !important;
+    }
+    &.small {
+        padding: 5px 5px;
+        font-size: 13px;
+    }
+    &.medium {
+        padding: 5px 12px;
+        font-size: 13px;
+        border-radius: 5px;
+    }
+}
+.btn-cancel {
+    background-color: white !important;
+    color: $theme-main-6 !important;
+    width: 150px;
+    // margin-top: 20px;
+    border: 1px solid darken(white, 10%);
+    &:hover {
+        background-color: darken(white, 10%) !important;
+        color: white;
+    }
+}
+.btn-delete {
+    background-color: red !important;
+    color: white !important;
+    // margin-left: 20px;
+    // margin-right: 10px;
+    // margin-top: 20px;
+    width: 150px;
+    border: 1px solid red !important;
+    &:hover {
+        background-color: darken(red, 5%) !important;
+        color: white;
+    }
+}
+
+//! remove this class later, this is for 'checkbox' on screen action details
+.hover-purple:hover {
+    background-color: #43425d !important;
+    color: white !important;
+}
+.btn-okay {
+    width: 70px;
+    height: 40px;
+    font-size: 16px;
+    background-color: white !important;
+    color: $theme-main-6 !important;
+    &:hover {
+        background-color: darken(white, 10%) !important;
+    }
+}
+
+button[disabled] {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.goBack {
+    background: none;
+    border: none;
+    outline: none;
+    svg {
+        path {
+            fill: $theme-main-1;
+        }
+        transition: all 0.1s ease-in-out;
+    }
+    span {
+        line-height: 1;
+        color: $theme-main-1;
+    }
+
+    &:hover {
+        svg {
+            transform: translateX(-2px);
+        }
+    }
+    &:active {
+        svg {
+            transform: translateX(-5px);
+        }
+    }
+}

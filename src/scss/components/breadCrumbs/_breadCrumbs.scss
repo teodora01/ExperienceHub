@@ -1,0 +1,19 @@
+.breadCrumbs {
+    a {
+        text-decoration: none;
+        transition: all 0.1s ease-in-out;
+        .rootIcon {
+            path {
+                transition: all 0.1s ease-in-out;
+            }
+        }
+        &:hover {
+            color: $theme-main-1;
+            .rootIcon {
+                path {
+                    fill: $theme-main-1;
+                }
+            }
+        }
+    }
+}

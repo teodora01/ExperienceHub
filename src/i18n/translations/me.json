@@ -1,0 +1,29 @@
+{
+    "FIRST_NAME": "Ime *",
+    "LAST_NAME": "Prezime *",
+    "PASSWORD": "Lozinka",
+    "EMAIL": "Email",
+    "REPEAT_PASSWORD": "Ponovite lozinku",
+    "USERNAME": "Korisničko ime",
+    "INPUT_REQUIRED": "Polje je obavezno!",
+    "NEXT_STEP": "Sljedeći korak",
+    "SUBMIT": "Registruj se",
+    "EMAIL_INVALID": "Email koji ste unijeli nije validan!",
+    "COUNTRY-optional": "Država - opcionalno",
+    "GENDER-optional": "Pol - opcionalno",
+    "ONLY_LETTERS": "Molimo Vas da koristite samo slova!",
+    "MUST_BE_LONGER_THAN_2": "Minimum 2 karaktera!",
+    "MUST_BE_SHORTER_THAN_25": "Maksimalna dužina je 25 karaktera!",
+    "WELCOME": "Dobro došli!",
+    "ADDRESS": "Adresa",
+    "TERMS_AND_CONDITIONS": "Pročitao/la sam i prihvatam uslove korišćenja",
+    "PSW_DONT_MATCH": "Lozinke nisu iste!",
+    "PASSWORD_STRENGTH": "Lozinka mora sadržati makar jedno veliko slovo, jedno malo slovo, jedan broj i jedan specijalan karakter",
+    "MIN_PSW_LENGTH": "Lozinka ne smije biti manja od 8 karaktera!"
+
+
+
+
+
+
+}

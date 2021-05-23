@@ -1,0 +1,24 @@
+{
+    "FIRST_NAME": "First name *",
+    "LAST_NAME": "Last name *",
+    "PASSWORD": "Password",
+    "EMAIL": "Email",
+    "REPEAT_PASSWORD": "Repeat password",
+    "USERNAME": "Username",
+    "INPUT_REQUIRED": "Input required",
+    "NEXT_STEP": "Next step",
+    "SUBMIT": "Submit",
+    "EMAIL_INVALID": "Email invalid",
+    "COUNTRY-optional": "Country - optional",
+    "GENDER-optional": "Gender - optional",
+    "ONLY_LETTERS": "Please input alphabet characters only!",
+    "MUST_BE_LONGER_THAN_2": "Must have at least 2 characters!",
+    "MUST_BE_SHORTER_THAN_25": "Maximum length 25 characters!",
+    "WELCOME": "Welcome!",
+    "ADDRESS": "Address",
+    "TERMS_AND_CONDITIONS": "I have read and agree to the website terms and conditions",
+    "PSW_DONT_MATCH": "Passwords don't match!",
+    "PASSWORD_STRENGTH": "Password must contain at least one uppercase letter, one lowercase letter, one number and one special character",
+    "MIN_PSW_LENGTH": "Password must be at least 8 characters long!"
+
+}

@@ -8,8 +8,13 @@ import { isEmpty, validateNumber } from "./inputValidations/InputValidations";
 //     ShowPasswordIcon,
 // } from "../../../components/Icons/Icons";
 // import Translate from "../../functions/utilFunctions/translate";
-// import { useFormContext } from "../CustomForm/CustomForm";
-import { validateEmail } from "../../functions/utilFunctions/validations";
+import { useFormContext } from "../CustomForm/CustomForm";
+import {
+    lettersOnlyValidation,
+    validateEmail,
+} from "../../functions/utilFunctions/validations";
+import Translate from "../../functions/translate";
+import { ShowPasswordIcon } from "../../Icons/Icons";
 
 export interface IHandleInputProps {
     value: string | number;
@@ -17,10 +22,10 @@ export interface IHandleInputProps {
 }
 interface ICustomInput {
     name: string;
-    value: string | number;
+    value?: string | number;
     placeholder?: string;
-    type: "text" | "number" | "email" | "radio" | "password";
-    handleInput: (
+    type: "text" | "number" | "email" | "letters" | "password";
+    handleInput?: (
         name: string,
         data: IHandleInputProps,
         index?: number
@@ -61,6 +66,12 @@ const _csi = React.forwardRef<HTMLInputElement, ICustomInput>(
         }: any,
         ref: any
     ) => {
+        const isForm = useFormContext();
+        if (!isForm) {
+            throw Error(
+                "You can't use CustomInput outside of CustomForm component!"
+            );
+        }
         const [showPassword, setShowPassword] = useState(false);
         const validateInput = () => {
             if (typeof value === "string") {
@@ -71,6 +82,9 @@ const _csi = React.forwardRef<HTMLInputElement, ICustomInput>(
             }
             if (type === "email" && !validateEmail(value)) {
                 handleInput(name, { value, errors: ["EMAIL_INVALID"] }, index);
+            }
+            if (type === "letters" && !lettersOnlyValidation(value)) {
+                handleInput(name, { value, errors: ["ONLY_LETTERS"] });
             }
             if (required && isEmpty(value)) {
                 handleInput(name, { value, errors: ["INPUT_REQUIRED"] }, index);
@@ -130,7 +144,7 @@ const _csi = React.forwardRef<HTMLInputElement, ICustomInput>(
                     }  ${value ? "hasText" : ""}`}
                 >
                     <label className={`${labelClass ? labelClass : ""}`}>
-                        {/* <Translate text={label} /> */}
+                        <Translate text={label} />
                     </label>
                     <input
                         placeholder={placeholder ? t(placeholder) : ""}
@@ -147,12 +161,12 @@ const _csi = React.forwardRef<HTMLInputElement, ICustomInput>(
                     />
                     {type === "password" && (
                         <span onClick={handleShowPassword}>
-                            {/* <ShowPasswordIcon
+                            <ShowPasswordIcon
                                 width={20}
                                 className={`showPassword ${
                                     showPassword ? "active" : ""
                                 }`}
-                            /> */}
+                            />
                         </span>
                     )}
                     {
@@ -167,7 +181,7 @@ const _csi = React.forwardRef<HTMLInputElement, ICustomInput>(
                         }`}
                         key={i}
                     >
-                        {/* <Translate text={e} /> */}
+                        <Translate text={e} />
                     </span>
                 ))}
             </div>
