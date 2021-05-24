@@ -70,205 +70,209 @@ class Form extends React.Component<any, any> {
             { value: 5, label: "Prefer not to respond" },
         ],
         countries: [
-            { value: 0, label: "Afghanistan" },
-            { value: 1, label: "Albania" },
-            { value: 2, label: "Algeria" },
-            { value: 3, label: "Andorra" },
-            { value: 4, label: "Angola" },
-            { value: 5, label: "Anguilla" },
-            { value: 6, label: "Antigua & Barbuda" },
-            //  Argentina
-            //             Armenia
-            //             Australia
-            //             Austria
-            //             Azerbaijan
-            //             Bahamas
-            //             Bahrain
-            //             Bangladesh
-            //             Barbados
-            //             Belarus
-            //             Belgium
-            //             Belize
-            //             Benin
-            //             Bermuda
-            //             Bhutan
-            //             Bolivia
-            //             Bosnia & Herzegovina
-            //             Botswana
-            //             Brazil
-            //             Brunei Darussalam
-            //             Bulgaria
-            //             Burkina Faso
-            //             Burundi
-            //             Cambodia
-            //             Cameroon
-            //             Canada
-            //             Cape Verde
-            //             Cayman Islands
-            //             Central African Republic
-            //             Chad
-            //             Chile
-            //             China
-            //             China - Hong Kong / Macau
-            //             Colombia
-            //             Comoros
-            //             Congo
-            //             Congo, Democratic Republic of (DRC)
-            //             Costa Rica
-            //             Croatia
-            //             Cuba
-            //             Cyprus
-            //             Czech Republic
-            //             Denmark
-            //             Djibouti
-            //             Dominica
-            //             Dominican Republic
-            //             Ecuador
-            //             Egypt
-            //             El Salvador
-            //             Equatorial Guinea
-            //             Eritrea
-            //             Estonia
-            //             Eswatini
-            //             Ethiopia
-            //             Fiji
-            //             Finland
-            //             France
-            //             French Guiana
-            //             Gabon
-            //             Gambia, Republic of The
-            //             Georgia
-            //             Germany
-            //             Ghana
-            //             Great Britain
-            //             Greece
-            //             Grenada
-            //             Guadeloupe
-            //             Guatemala
-            //             Guinea
-            //             Guinea-Bissau
-            //             Guyana
-            //             Haiti
-            //             Honduras
-            //             Hungary
-            //             Iceland
-            //             India
-            //             Indonesia
-            //             Iran
-            //             Iraq
-            //             Israel and the Occupied Territories
-            //             Italy
-            //             Ivory Coast (Cote d'Ivoire)
-            //             Jamaica
-            //             Japan
-            //             Jordan
-            //             Kazakhstan
-            //             Kenya
-            //             Korea, Democratic Republic of (North Korea)
-            //             Korea, Republic of (South Korea)
-            //             Kosovo
-            //             Kuwait
-            //             Kyrgyz Republic (Kyrgyzstan)
-            //             Laos
-            //             Latvia
-            //             Lebanon
-            //             Lesotho
-            //             Liberia
-            //             Libya
-            //             Liechtenstein
-            //             Lithuania
-            //             Luxembourg
-            //             Madagascar
-            //             Malawi
-            //             Malaysia
-            //             Maldives
-            //             Mali
-            //             Malta
-            //             Martinique
-            //             Mauritania
-            //             Mauritius
-            //             Mayotte
-            //             Mexico
-            //             Moldova, Republic of
-            //             Monaco
-            //             Mongolia
-            //             Montenegro
-            //             Montserrat
-            //             Morocco
-            //             Mozambique
-            //             Myanmar/Burma
-            //             Namibia
-            //             Nepal
-            //             Netherlands
-            //             New Zealand
-            //             Nicaragua
-            //             Niger
-            //             Nigeria
-            //             North Macedonia, Republic of
-            //             Norway
-            //             Oman
-            //             Pacific Islands
-            //             Pakistan
-            //             Panama
-            //             Papua New Guinea
-            //             Paraguay
-            //             Peru
-            //             Philippines
-            //             Poland
-            //             Portugal
-            //             Puerto Rico
-            //             Qatar
-            //             Reunion
-            //             Romania
-            //             Russian Federation
-            //             Rwanda
-            //             Saint Kitts and Nevis
-            //             Saint Lucia
-            //             Saint Vincent and the Grenadines
-            //             Samoa
-            //             Sao Tome and Principe
-            //             Saudi Arabia
-            //             Senegal
-            //             Serbia
-            //             Seychelles
-            //             Sierra Leone
-            //             Singapore
-            //             Slovak Republic (Slovakia)
-            //             Slovenia
-            //             Solomon Islands
-            //             Somalia
-            //             South Africa
-            //             South Sudan
-            //             Spain
-            //             Sri Lanka
-            //             Sudan
-            //             Suriname
-            //             Sweden
-            //             Switzerland
-            //             Syria
-            //             Tajikistan
-            //             Tanzania
-            //             Thailand
-            //             Timor Leste
-            //             Togo
-            //             Trinidad & Tobago
-            //             Tunisia
-            //             Turkey
-            //             Turkmenistan
-            //             Turks & Caicos Islands
-            //             Uganda
-            //             Ukraine
-            //             United Arab Emirates
-            //             United States of America (USA)
-            //             Uruguay
-            //             Uzbekistan
-            //             Venezuela
-            //             Vietnam
-            //             Virgin Islands (UK)
-            //             Virgin Islands (US)
-            //             Yemen
-            //             Zambia
-            //             Zimbabwe
+            { value: 1, label: "Afghanistan" },
+            { value: 2, label: "Albania" },
+            { value: 3, label: "Algeria" },
+            { value: 4, label: "Andorra" },
+            { value: 5, label: "Angola" },
+            { value: 6, label: "Anguilla" },
+            { value: 7, label: "Antigua & Barbuda" },
+            { value: 8, label: "Argentina" },
+            { value: 9, label: "Armenia" },
+            { value: 10, label: "Australia" },
+            { value: 11, label: "Austria" },
+            { value: 12, label: "Azerbaijan" },
+            { value: 13, label: "Bahamas" },
+            { value: 14, label: "Bahrain" },
+            { value: 15, label: "Bangladesh" },
+            { value: 16, label: "Barbados" },
+            { value: 17, label: "Belarus" },
+            { value: 18, label: "Belgium" },
+            { value: 19, label: "Belize" },
+            { value: 20, label: "Benin" },
+            { value: 21, label: "Bermuda" },
+            { value: 22, label: "Bhutan" },
+            { value: 23, label: "Bolivia" },
+            { value: 24, label: "Bosnia & Herzegovina" },
+            { value: 25, label: "Botswana" },
+            { value: 26, label: "Brazil" },
+            { value: 27, label: "Brunei Darussalam" },
+            { value: 28, label: "Bulgaria" },
+            { value: 29, label: "Burkina Faso" },
+            { value: 30, label: "Burundi" },
+            { value: 31, label: "Cambodia" },
+            { value: 32, label: "Cameroon" },
+            { value: 33, label: "Canada" },
+            { value: 34, label: "Cape Verde" },
+            { value: 35, label: "Cayman Islands" },
+            { value: 36, label: "Central African Republic" },
+            { value: 37, label: "Chad" },
+            { value: 38, label: "Chile" },
+            { value: 39, label: "China" },
+            { value: 40, label: "Colombia" },
+            { value: 41, label: "Comoros" },
+            { value: 42, label: "Congo" },
+            { value: 43, label: "Congo, Democratic Republic of (DRC)" },
+            { value: 44, label: "Costa Rica" },
+            { value: 45, label: "Croatia" },
+            { value: 46, label: "Cuba" },
+            { value: 47, label: "Cyprus" },
+            { value: 48, label: "Czech Republic" },
+            { value: 49, label: "Denmark" },
+            { value: 50, label: "Djibouti" },
+            { value: 51, label: "Dominica" },
+            { value: 52, label: "Dominican Republic" },
+            { value: 53, label: "Ecuador" },
+            { value: 54, label: "Egypt" },
+            { value: 55, label: "El Salvador" },
+            { value: 56, label: "Equatorial Guinea" },
+            { value: 57, label: "Eritrea" },
+            { value: 58, label: "Estonia" },
+            { value: 59, label: "Eswatini" },
+            { value: 60, label: "Ethiopia" },
+            { value: 70, label: "Fiji" },
+            { value: 71, label: "Finland" },
+            { value: 72, label: "France" },
+            { value: 73, label: "French Guiana" },
+            { value: 74, label: "Gabon" },
+            { value: 75, label: "Gambia" },
+            { value: 76, label: "Georgia" },
+            { value: 77, label: "Germany" },
+            { value: 78, label: "Ghana" },
+            { value: 79, label: "Great Britain" },
+            { value: 80, label: "Greece" },
+            { value: 81, label: "Grenada" },
+            { value: 82, label: "Guadeloupe" },
+            { value: 83, label: "Guatemala" },
+            { value: 84, label: "Guinea" },
+            { value: 85, label: "Guinea-Bissau" },
+            { value: 86, label: "Guyana" },
+            { value: 87, label: "Haiti" },
+            { value: 88, label: "Honduras" },
+            { value: 89, label: "Hungary" },
+            { value: 90, label: "Iceland" },
+            { value: 91, label: "India" },
+            { value: 92, label: "Indonesia" },
+            { value: 93, label: "Iran" },
+            { value: 94, label: "Iraq" },
+            { value: 95, label: "Israel" },
+            { value: 96, label: "Italy" },
+            { value: 97, label: "Ivory Coast" },
+            { value: 98, label: "Jamaica" },
+            { value: 99, label: "Japan" },
+            { value: 100, label: "Jordan" },
+            { value: 101, label: "Kazakhstan" },
+            { value: 102, label: "Kenya" },
+            {
+                value: 103,
+                label: "Korea, Democratic Republic of (North Korea)",
+            },
+            { value: 104, label: " Korea, Republic of (South Korea)" },
+            { value: 105, label: "Kosovo" },
+            { value: 106, label: "Kuwait" },
+            { value: 107, label: "Kyrgyz Republic (Kyrgyzstan)" },
+            { value: 108, label: "Laos" },
+            { value: 109, label: "Latvia" },
+            { value: 110, label: "Latvia" },
+            { value: 111, label: "Lebanon" },
+            { value: 112, label: "Lesotho" },
+            { value: 113, label: "Liberia" },
+            { value: 114, label: "Libya" },
+            { value: 115, label: "Liechtenstein" },
+            { value: 116, label: "Lithuania" },
+            { value: 117, label: "Luxembourg" },
+            { value: 118, label: "Madagascar" },
+            { value: 119, label: "Malawi" },
+            { value: 120, label: "Malaysia" },
+            { value: 121, label: "Maldives" },
+            { value: 122, label: "Mali" },
+            { value: 123, label: "Malta" },
+            { value: 124, label: "Martinique" },
+            { value: 125, label: "Mauritania" },
+            { value: 126, label: "Mauritius" },
+            { value: 127, label: "Mayotte" },
+            { value: 128, label: "Mexico" },
+            { value: 129, label: "Moldova" },
+            { value: 130, label: "Monaco" },
+            { value: 131, label: "Mongolia" },
+            { value: 132, label: "Montenegro" },
+
+            { value: 133, label: "Montserrat" },
+            { value: 134, label: "Morocco" },
+            { value: 135, label: "Mozambique" },
+            { value: 136, label: " Myanmar/Burma" },
+            { value: 137, label: "Namibia" },
+            { value: 138, label: "Nepal" },
+            { value: 139, label: "Netherlands" },
+            { value: 140, label: "New Zealand" },
+            { value: 141, label: "Nicaragua" },
+            { value: 142, label: "Niger" },
+            { value: 143, label: "Nigeria" },
+            { value: 144, label: "North Macedonia, Republic of" },
+            { value: 145, label: "Norway" },
+            { value: 146, label: "Oman" },
+            { value: 147, label: "Pacific Islands" },
+            { value: 148, label: "Pakistan" },
+            { value: 149, label: "Panama" },
+            { value: 150, label: "Papua New Guinea" },
+            { value: 151, label: "Paraguay" },
+            { value: 152, label: "Peru" },
+            { value: 153, label: "Philippines" },
+            { value: 154, label: "Poland" },
+            { value: 155, label: "Portugal" },
+            { value: 156, label: "Puerto Rico" },
+            { value: 157, label: "Qatar" },
+            { value: 158, label: "Reunion" },
+            { value: 159, label: "Romania" },
+            { value: 160, label: "Russian Federation" },
+            { value: 161, label: "Rwanda" },
+            { value: 162, label: "Saint Kitts and Nevis" },
+            { value: 163, label: "Saint Lucia" },
+            { value: 164, label: "Saint Vincent and the Grenadines" },
+            { value: 165, label: "Samoa" },
+            { value: 166, label: "Sao Tome and Principe" },
+            { value: 167, label: "Saudi Arabia" },
+            { value: 168, label: "Senegal" },
+            { value: 169, label: "Serbia" },
+            { value: 170, label: "Seychelles" },
+            { value: 171, label: "Sierra Leone" },
+            { value: 172, label: "Singapore" },
+            { value: 173, label: "Slovak Republic (Slovakia)" },
+            { value: 174, label: "Slovenia" },
+            { value: 175, label: " Solomon Islands" },
+            { value: 176, label: "Somalia" },
+            { value: 177, label: "South Africa" },
+            { value: 178, label: "South Sudan" },
+            { value: 179, label: "Spain" },
+            { value: 180, label: " Sri Lanka" },
+            { value: 181, label: "Sudan" },
+            { value: 182, label: "Suriname" },
+            { value: 183, label: "Sweden" },
+            { value: 184, label: "Switzerland" },
+            { value: 185, label: "Syria" },
+            { value: 186, label: "Tajikistan" },
+            { value: 187, label: "Tanzania" },
+            { value: 188, label: "Thailand" },
+            { value: 189, label: "Timor Leste" },
+            { value: 190, label: "Togo" },
+            { value: 191, label: "Trinidad & Tobago" },
+            { value: 192, label: "Tunisia" },
+            { value: 193, label: "Turkey" },
+            { value: 194, label: "Turkmenistan" },
+            { value: 195, label: "Turks & Caicos Islands" },
+            { value: 196, label: "Uganda" },
+            { value: 197, label: "Ukraine" },
+            { value: 198, label: "United Arab Emirates" },
+            { value: 199, label: "United States of America (USA)" },
+            { value: 200, label: "Uruguay" },
+            { value: 201, label: "Uzbekistan" },
+            { value: 202, label: "Venezuela" },
+            { value: 203, label: "Vietnam" },
+            { value: 204, label: " Virgin Islands (UK)" },
+            { value: 205, label: " Virgin Islands (US)" },
+            { value: 206, label: "Yemen" },
+            { value: 207, label: "Zambia" },
+            { value: 208, label: "Zimbabwe" },
         ],
         secondStep: false,
         trigger: false,
@@ -282,9 +286,11 @@ class Form extends React.Component<any, any> {
             this.setState({ showLoader: false });
         }, 1000);
     }
-    selectCountry = (val: any) => {
-        this.setState({ country: val });
-    };
+
+    // Function for selecting country using plugin
+    // selectCountry = (val: any) => {
+    //     this.setState({ country: val });
+    // };
     handleCheckbox = () => {
         this.setState((prevState: any) => ({
             form: {
@@ -457,7 +463,6 @@ class Form extends React.Component<any, any> {
                 form: {
                     ...prevState.form,
                 },
-                // showSuccessModal: !prevState.showSuccessModal,
             }));
             this.successfullRegistration();
         }
@@ -478,9 +483,7 @@ class Form extends React.Component<any, any> {
     };
     render() {
         const { form, secondStep, countries, genders, showLoader } = this.state;
-        // const styles = {
-        //     transform: `translate(-${counter * 50}%)`,
-        // };
+
         return (
             <div>
                 <Modal
