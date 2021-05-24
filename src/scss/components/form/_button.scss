@@ -8,7 +8,7 @@
     font-size: 15px;
     border: 1px solid yellow;
     color: brown;
-    background: yellow;
+    background: #ffff00;
     border-radius: 30px;
     font-weight: 600;
     transition: all 0.2s ease-in-out;
@@ -101,32 +101,6 @@
     }
 }
 
-.btn-save {
-    background-color: $theme-main-6 !important;
-    color: white !important;
-    width: 150px;
-    &:hover {
-        background-color: darken($theme-main-6, 10%) !important;
-        color: white;
-    }
-}
-.btn-back {
-    background-color: white !important;
-    color: #43425d !important;
-    &:hover {
-        background-color: $theme-main-6 !important;
-        color: white !important;
-    }
-    &.small {
-        padding: 5px 5px;
-        font-size: 13px;
-    }
-    &.medium {
-        padding: 5px 12px;
-        font-size: 13px;
-        border-radius: 5px;
-    }
-}
 .btn-cancel {
     background-color: white !important;
     color: $theme-main-6 !important;
@@ -138,25 +112,7 @@
         color: white;
     }
 }
-.btn-delete {
-    background-color: red !important;
-    color: white !important;
-    // margin-left: 20px;
-    // margin-right: 10px;
-    // margin-top: 20px;
-    width: 150px;
-    border: 1px solid red !important;
-    &:hover {
-        background-color: darken(red, 5%) !important;
-        color: white;
-    }
-}
 
-//! remove this class later, this is for 'checkbox' on screen action details
-.hover-purple:hover {
-    background-color: #43425d !important;
-    color: white !important;
-}
 .btn-okay {
     width: 70px;
     height: 40px;
@@ -171,31 +127,4 @@
 button[disabled] {
     pointer-events: none;
     opacity: 0.7;
-}
-
-.goBack {
-    background: none;
-    border: none;
-    outline: none;
-    svg {
-        path {
-            fill: $theme-main-1;
-        }
-        transition: all 0.1s ease-in-out;
-    }
-    span {
-        line-height: 1;
-        color: $theme-main-1;
-    }
-
-    &:hover {
-        svg {
-            transform: translateX(-2px);
-        }
-    }
-    &:active {
-        svg {
-            transform: translateX(-5px);
-        }
-    }
 }

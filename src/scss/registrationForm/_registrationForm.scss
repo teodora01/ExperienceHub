@@ -2,8 +2,6 @@
     padding: 20px;
     border-radius: 30px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    // height: 650px;
-    background: white;
     width: 450px;
     background: white;
 }
@@ -12,9 +10,10 @@ body {
     // background: url(https://raw.githubusercontent.com/naaficodes/Monkey-Login/master/images/monkeybg.png)
     //     #1b8c1b66;
     // background: url(https://i.pinimg.com/736x/83/d6/03/83d60358a3c1e262a2a9f49697d193bc.jpg);
-    background: url(https://cdn4.vectorstock.com/i/1000x1000/08/98/monkeys-living-in-forest-vector-7830898.jpg);
+    // background: url(https://cdn4.vectorstock.com/i/1000x1000/08/98/monkeys-living-in-forest-vector-7830898.jpg);
     // background-size: 5%;
-    background-size: 100%;
+    background-size: 100% !important;
+    background: url("../monkeybg.jpg");
 }
 .maincontainer {
     display: flex;
@@ -62,12 +61,29 @@ body {
 }
 
 .titleWelcome {
-    font-size: 30px;
+    font-size: 36px;
     font-weight: 900;
-    color: greenyellow;
+    color: #adff2f;
     font-family: sans-serif;
 }
-
+input {
+    height: 40px;
+    width: 300px;
+    /*background-color: #254E58;*/
+    border-radius: 20px;
+    border: none;
+    color: #5a5449;
+    text-indent: 15px;
+    font-size: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+input::placeholder {
+    color: lightgrey;
+    font-size: 100%;
+    font-weight: lighter;
+    text-indent: 15px;
+}
 .icon {
     fill: greenyellow;
 }
@@ -76,4 +92,8 @@ body {
     line-height: 1;
     color: $theme-main-7;
     font-size: 1.4rem;
+}
+
+.modalBg {
+    background: #e4f3ae98;
 }

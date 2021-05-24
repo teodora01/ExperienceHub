@@ -2,6 +2,8 @@ import React from "react";
 import CustomButton from "../../CMS/CustomButton/CustomButton";
 import CustomCheckbox from "../../CMS/CustomCheckbox/CustomCheckbox";
 import CustomDropdown from "../../CMS/CustomDropdown/CustomDropdown";
+import { Loader } from "../../Loader/Loader";
+
 import CustomForm from "../../CMS/CustomForm/CustomForm";
 import CustomInput from "../../CMS/CustomInput/CustomInput";
 import Translate from "../../functions/translate";
@@ -273,8 +275,13 @@ class Form extends React.Component<any, any> {
         counter: 0,
         showSuccessModal: false,
         showFailedModal: false,
+        showLoader: true,
     };
-
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({ showLoader: false });
+        }, 1000);
+    }
     selectCountry = (val: any) => {
         this.setState({ country: val });
     };
@@ -434,9 +441,7 @@ class Form extends React.Component<any, any> {
                 };
             }
         });
-        if (!termsAndConditions) {
-            this.setState({ showFailedModal: true });
-        }
+
         if (Object.keys(errors).length !== 0) {
             this.setState((prevState: { form: any }) => ({
                 form: {
@@ -444,45 +449,35 @@ class Form extends React.Component<any, any> {
                     ...errors,
                 },
             }));
+            if (Object.keys(errors).length !== 0 && !termsAndConditions) {
+                this.setState({ showFailedModal: true });
+            }
         } else {
             this.setState((prevState: any) => ({
                 form: {
                     ...prevState.form,
                 },
-                showSuccessModal: !prevState.showSuccessModal,
+                // showSuccessModal: !prevState.showSuccessModal,
             }));
-            // this.submitApplication(form);
+            this.successfullRegistration();
         }
     };
 
-    // submitApplication = (e: { preventDefault: () => void }) => {
-    //     e.preventDefault();
-    //     return new Promise((fulfill, reject) => {
-    //         //success
-    //         setTimeout(
-    //             (this.toggleModal = () => {
-    //                 fulfill({
-    //                     info: {
-    //                         success: true,
-    //                     },
-    //                 });
-    //             }
-    //             ),
-    //             1000
-    //         );
-    //     });
-    // };
+    successfullRegistration = () => {
+        setTimeout(() => {
+            this.toggleModal("showSuccessModal");
+        }, 1000);
+    };
     toggleModal = (name: string | number) => {
         this.setState((prevState: any) => ({
             [name]: !prevState[name],
         }));
-        if (name === "showSuccessModal") {
-            window.location.reload();
-        }
     };
-
+    reloadPage = () => {
+        window.location.reload();
+    };
     render() {
-        const { form, secondStep, countries, genders } = this.state;
+        const { form, secondStep, countries, genders, showLoader } = this.state;
         // const styles = {
         //     transform: `translate(-${counter * 50}%)`,
         // };
@@ -499,7 +494,7 @@ class Form extends React.Component<any, any> {
                         title="SUCCESSFULLY_REGISTERED"
                         text={"CONGRATULATIONS"}
                         modalName="showSuccessModal"
-                        toggleModal={this.toggleModal}
+                        toggleModal={this.reloadPage}
                     />
                 </Modal>
                 <Modal
@@ -518,224 +513,241 @@ class Form extends React.Component<any, any> {
                         toggleModal={this.toggleModal}
                     />
                 </Modal>
-                <div className="d-flex h-vh-100     align-items-center justify-content-center ">
-                    <CustomForm className="d-flex flex-column align-items-center justify-content-between registrationForm">
-                        <div className="d-flex flex-column align-items-center  w-100perc ">
-                            <span className="titleWelcome">
-                                <Translate text="WELCOME" />
-                            </span>
-                            <div className="animcon" id="animcon">
-                                <img
-                                    id="hands"
-                                    src="https://raw.githubusercontent.com/naaficodes/Monkey-Login/master/images/hands.png"
-                                />
-                            </div>
-                            <div className="d-flex mb-30 mt-20">
-                                <CustomButton
-                                    className={`${
-                                        this.props.lang === "en"
-                                            ? "btn-header-active mr-20"
-                                            : "btn-header mr-20"
-                                    }`}
-                                    onClick={this.props.english}
-                                >
-                                    <div className=" d-flex">
-                                        <span className="language">
-                                            <UKFlag width={20} />
-                                        </span>
-                                    </div>
-                                </CustomButton>
-                                <CustomButton
-                                    className={`${
-                                        this.props.lang === "me"
-                                            ? "btn-header-active "
-                                            : "btn-header"
-                                    }`}
-                                    onClick={this.props.serbian}
-                                >
-                                    <div className=" d-flex">
-                                        <span>
-                                            <MNEFlag width={20} />
-                                        </span>
-                                    </div>
-                                </CustomButton>
-                            </div>
-                            {!secondStep ? (
-                                <div className="w-100perc">
-                                    {" "}
-                                    <div className="mb-30 w-100perc">
-                                        <CustomInput
-                                            name="firstName"
-                                            label="FIRST_NAME"
-                                            type="letters"
-                                            handleInput={this.handleInput}
-                                            value={form.firstName.value}
-                                            errors={form.firstName.errors}
-                                            required
-                                        />
-                                    </div>
-                                    <div className="mb-30  w-100perc">
-                                        <CustomInput
-                                            name="lastName"
-                                            label="LAST_NAME"
-                                            type="letters"
-                                            handleInput={this.handleInput}
-                                            value={form.lastName.value}
-                                            errors={form.lastName.errors}
-                                            required
-                                        />
-                                    </div>
-                                    <div className="mb-30  w-100perc">
-                                        <CustomInput
-                                            name="address"
-                                            label="ADDRESS"
-                                            type="text"
-                                            handleInput={this.handleInput}
-                                            value={form.address.value}
-                                            errors={form.address.errors}
-                                            required
-                                        />
-                                    </div>
-                                    <div className="w-100perc mb-30">
-                                        <CustomDropdown
-                                            name="country"
-                                            data={countries}
-                                            placeholder={
-                                                <Translate text="COUNTRY-optional" />
-                                            }
-                                            value={countries.find(
-                                                (country: any) =>
-                                                    country.value ===
-                                                    form.country.value
-                                            )}
-                                            handleChange={this.handleInput}
-                                        />
-                                        {/* <CountryDropdown
+                {showLoader ? (
+                    <div className="h-vh-100  d-flex justify-content-between align-items-center modalBg">
+                        <Loader className="w-200"></Loader>
+                    </div>
+                ) : (
+                    <div className="d-flex h-vh-100     align-items-center justify-content-center ">
+                        <CustomForm className="d-flex flex-column align-items-center justify-content-between registrationForm">
+                            <div className="d-flex flex-column align-items-center  w-100perc ">
+                                <span className="titleWelcome">
+                                    <Translate text="WELCOME" />
+                                </span>
+                                <div className="animcon" id="animcon">
+                                    <img
+                                        id="hands"
+                                        src="https://raw.githubusercontent.com/naaficodes/Monkey-Login/master/images/hands.png"
+                                    />
+                                </div>
+                                <div className="d-flex mb-30 mt-20">
+                                    <CustomButton
+                                        className={`${
+                                            this.props.lang === "en"
+                                                ? "btn-header-active mr-20"
+                                                : "btn-header mr-20"
+                                        }`}
+                                        onClick={this.props.english}
+                                    >
+                                        <div className=" d-flex">
+                                            <span className="language">
+                                                <UKFlag width={20} />
+                                            </span>
+                                        </div>
+                                    </CustomButton>
+                                    <CustomButton
+                                        className={`${
+                                            this.props.lang === "me"
+                                                ? "btn-header-active "
+                                                : "btn-header"
+                                        }`}
+                                        onClick={this.props.serbian}
+                                    >
+                                        <div className=" d-flex">
+                                            <span>
+                                                <MNEFlag width={20} />
+                                            </span>
+                                        </div>
+                                    </CustomButton>
+                                </div>
+                                {!secondStep ? (
+                                    <div className="w-100perc">
+                                        {" "}
+                                        <div className="mb-30 w-100perc">
+                                            <CustomInput
+                                                name="firstName"
+                                                label="FIRST_NAME"
+                                                type="letters"
+                                                handleInput={this.handleInput}
+                                                value={form.firstName.value}
+                                                errors={form.firstName.errors}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="mb-30  w-100perc">
+                                            <CustomInput
+                                                name="lastName"
+                                                label="LAST_NAME"
+                                                type="letters"
+                                                handleInput={this.handleInput}
+                                                value={form.lastName.value}
+                                                errors={form.lastName.errors}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="mb-30  w-100perc">
+                                            <CustomInput
+                                                name="address"
+                                                label="ADDRESS"
+                                                type="text"
+                                                handleInput={this.handleInput}
+                                                value={form.address.value}
+                                                errors={form.address.errors}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="w-100perc mb-30">
+                                            <CustomDropdown
+                                                name="country"
+                                                data={countries}
+                                                placeholder={
+                                                    <Translate text="COUNTRY-optional" />
+                                                }
+                                                value={countries.find(
+                                                    (country: any) =>
+                                                        country.value ===
+                                                        form.country.value
+                                                )}
+                                                handleChange={this.handleInput}
+                                            />
+                                            {/* <CountryDropdown
                                             classes="rcrs-country"
                                             value={country}
                                             onChange={(val) =>
                                                 this.selectCountry(val)
                                             }
                                         /> */}
-                                    </div>
-                                    <div className="mb-30">
-                                        <CustomDropdown
-                                            name="gender"
-                                            data={genders}
-                                            placeholder={
-                                                <Translate text="GENDER-optional" />
-                                            }
-                                            value={genders.find(
-                                                (gender: any) =>
-                                                    gender.value ===
-                                                    form.gender.value
-                                            )}
-                                            handleChange={this.handleInput}
-                                        />
-                                    </div>
-                                </div>
-                            ) : (
-                                <div className="w-100perc">
-                                    {" "}
-                                    <div className="mb-30 w-100perc">
-                                        <CustomInput
-                                            name="email"
-                                            label="EMAIL"
-                                            type="email"
-                                            handleInput={this.handleInput}
-                                            value={form.email.value}
-                                            errors={form.email.errors}
-                                            required
-                                        />
-                                    </div>
-                                    <div className="mb-30  w-100perc">
-                                        <CustomInput
-                                            name="password"
-                                            label="PASSWORD"
-                                            type="password"
-                                            handleInput={this.handleInput}
-                                            value={form.password.value}
-                                            errors={form.password.errors}
-                                            errorClass="error-xs"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="mb-30  w-100perc">
-                                        <CustomInput
-                                            name="repeatPassword"
-                                            label="REPEAT_PASSWORD"
-                                            type="password"
-                                            handleInput={this.handleInput}
-                                            value={form.repeatPassword.value}
-                                            errors={form.repeatPassword.errors}
-                                            errorClass="error-xs"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="mb-30  w-100perc">
-                                        <CustomInput
-                                            name="username"
-                                            label="USERNAME"
-                                            type="text"
-                                            handleInput={this.handleInput}
-                                            value={form.username.value}
-                                            errors={form.username.errors}
-                                            required
-                                        />
-                                    </div>
-                                    <div className="mb-30 d-flex">
-                                        <div className="mr-10">
-                                            <CustomCheckbox
-                                                name="termsAndConditions"
-                                                // checked={
-                                                //     form.termsAndConditions
-                                                // }
-                                                handleChange={
-                                                    this.handleCheckbox
+                                        </div>
+                                        <div className="mb-30">
+                                            <CustomDropdown
+                                                name="gender"
+                                                data={genders}
+                                                placeholder={
+                                                    <Translate text="GENDER-optional" />
                                                 }
+                                                value={genders.find(
+                                                    (gender: any) =>
+                                                        gender.value ===
+                                                        form.gender.value
+                                                )}
+                                                handleChange={this.handleInput}
                                             />
                                         </div>
-                                        <span className="terms d-flex align-items-center">
-                                            <Translate text="TERMS_AND_CONDITIONS" />
-                                        </span>
                                     </div>
-                                </div>
-                            )}
-                        </div>
-                        <div
-                            className={`${
-                                secondStep
-                                    ? "d-flex w-71perc align-self-start justify-content-between"
-                                    : "d-flex align-item-center justify-content-center"
-                            }`}
-                        >
-                            {secondStep && (
-                                <div
-                                    className="d-flex pointer"
-                                    onClick={this.handleReturnToFirstStep}
-                                >
-                                    <LeftArrow width={30} className="icon" />
-                                </div>
-                            )}
-                            <div>
-                                <CustomButton
-                                    onClick={
-                                        !secondStep
-                                            ? this.handleFirstStep
-                                            : this.handleSubmit
-                                    }
-                                    className={secondStep ? "btn-create" : ""}
-                                >
-                                    <Translate
-                                        text={
-                                            !secondStep ? "NEXT_STEP" : "SUBMIT"
-                                        }
-                                    />
-                                </CustomButton>
+                                ) : (
+                                    <div className="w-100perc">
+                                        {" "}
+                                        <div className="mb-30 w-100perc">
+                                            <CustomInput
+                                                name="email"
+                                                label="EMAIL"
+                                                type="email"
+                                                handleInput={this.handleInput}
+                                                value={form.email.value}
+                                                errors={form.email.errors}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="mb-30  w-100perc">
+                                            <CustomInput
+                                                name="password"
+                                                label="PASSWORD"
+                                                type="password"
+                                                handleInput={this.handleInput}
+                                                value={form.password.value}
+                                                errors={form.password.errors}
+                                                errorClass="error-xs"
+                                                required
+                                            />
+                                        </div>
+                                        <div className="mb-30  w-100perc">
+                                            <CustomInput
+                                                name="repeatPassword"
+                                                label="REPEAT_PASSWORD"
+                                                type="password"
+                                                handleInput={this.handleInput}
+                                                value={
+                                                    form.repeatPassword.value
+                                                }
+                                                errors={
+                                                    form.repeatPassword.errors
+                                                }
+                                                errorClass="error-xs"
+                                                required
+                                            />
+                                        </div>
+                                        <div className="mb-30  w-100perc">
+                                            <CustomInput
+                                                name="username"
+                                                label="USERNAME"
+                                                type="text"
+                                                handleInput={this.handleInput}
+                                                value={form.username.value}
+                                                errors={form.username.errors}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="mb-30 d-flex">
+                                            <div className="mr-10">
+                                                <CustomCheckbox
+                                                    name="termsAndConditions"
+                                                    // checked={
+                                                    //     form.termsAndConditions
+                                                    // }
+                                                    handleChange={
+                                                        this.handleCheckbox
+                                                    }
+                                                />
+                                            </div>
+                                            <span className="terms d-flex align-items-center">
+                                                <Translate text="TERMS_AND_CONDITIONS" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
-                        </div>
-                    </CustomForm>
-                </div>
+                            <div
+                                className={`${
+                                    secondStep
+                                        ? "d-flex w-71perc align-self-start justify-content-between"
+                                        : "d-flex align-item-center justify-content-center"
+                                }`}
+                            >
+                                {secondStep && (
+                                    <div
+                                        className="d-flex pointer"
+                                        onClick={this.handleReturnToFirstStep}
+                                    >
+                                        <LeftArrow
+                                            width={30}
+                                            className="icon"
+                                        />
+                                    </div>
+                                )}
+                                <div>
+                                    <CustomButton
+                                        onClick={
+                                            !secondStep
+                                                ? this.handleFirstStep
+                                                : this.handleSubmit
+                                        }
+                                        className={
+                                            secondStep ? "btn-create" : ""
+                                        }
+                                    >
+                                        <Translate
+                                            text={
+                                                !secondStep
+                                                    ? "NEXT_STEP"
+                                                    : "SUBMIT"
+                                            }
+                                        />
+                                    </CustomButton>
+                                </div>
+                            </div>
+                        </CustomForm>
+                    </div>
+                )}
             </div>
         );
     }

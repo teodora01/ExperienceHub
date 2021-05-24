@@ -5517,192 +5517,6 @@ main .content {
 /*******************************/
 /* COMPONENTS                  */
 /*******************************/
-#nav {
-  width: 70px;
-  background-color: #43425d;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 999999;
-  transition: all 0.2s ease-in-out; }
-  #nav .navContainer {
-    height: calc(100% - 100px); }
-  #nav .logoContainer {
-    border-bottom: 1px solid rgba(239, 239, 255, 0.4);
-    height: 100px; }
-    #nav .logoContainer a {
-      height: 100%; }
-      #nav .logoContainer a img {
-        max-height: 90%; }
-  #nav ul li {
-    height: 50px; }
-    #nav ul li a {
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
-      position: relative; }
-      #nav ul li a span {
-        line-height: 0;
-        position: relative;
-        z-index: 3; }
-        #nav ul li a span.icon:before {
-          height: 35px;
-          top: 50%;
-          left: 50%;
-          transform-origin: left;
-          transform: translate(-50%, -50%);
-          width: 35px;
-          border-radius: 8px;
-          background-color: #e69757;
-          content: "";
-          position: absolute;
-          transition: all 0.2s ease-in-out;
-          z-index: -1;
-          opacity: 0; }
-        #nav ul li a span .fill {
-          max-height: 30px; }
-          #nav ul li a span .fill path {
-            transition: all 0.2s ease-in-out;
-            fill: #ffffff; }
-        #nav ul li a span.label {
-          margin-left: 2rem;
-          transform: scaleX(0);
-          opacity: 0;
-          transition: opacity 0.2s ease-in-out;
-          transform-origin: left; }
-      #nav ul li a:hover .icon:before {
-        opacity: 0.9; }
-      #nav ul li a.active {
-        color: #ffffff; }
-        #nav ul li a.active span.icon:before {
-          opacity: 1; }
-        #nav ul li a.active span .fill path {
-          fill: #ffffff; }
-  #nav.open {
-    width: 250px;
-    box-shadow: 0 0 22px #bcbcff; }
-    #nav.open ul li a span:before {
-      border-radius: 0 8px 8px 0;
-      left: -20px;
-      transform: translate(0, -50%);
-      width: 220px; }
-    #nav.open .label {
-      transform: scale(1);
-      opacity: 1; }
-
-#header {
-  position: fixed;
-  left: 70px;
-  top: 0;
-  height: 50px;
-  width: calc(100% - 70px);
-  background-color: #ffffff;
-  z-index: 99999; }
-  #header .lang {
-    line-height: 0; }
-  #header .headerInfo {
-    position: relative;
-    z-index: 99999;
-    width: 100%;
-    background: #ffffff; }
-  #header .settings {
-    position: absolute;
-    right: 0;
-    top: -190px;
-    width: 350px;
-    background: #ffffff;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    z-index: -1;
-    transition: all 0.2s ease-in-out;
-    overflow: hidden; }
-    #header .settings ul {
-      list-style: none;
-      border-bottom-right-radius: 8px;
-      border-bottom-left-radius: 8px; }
-      #header .settings ul li {
-        min-height: 40px;
-        padding: 0 1rem;
-        transition: all 0.1s ease-in-out;
-        color: #868686; }
-        #header .settings ul li:not(:last-child) {
-          border-bottom: 1px solid #efefff; }
-        #header .settings ul li .imgContainer img {
-          height: 50px;
-          width: 50px;
-          object-fit: cover;
-          border-radius: 50%; }
-        #header .settings ul li span {
-          max-height: 20px;
-          line-height: 1; }
-          #header .settings ul li span path {
-            transition: all 0.1s ease-in-out; }
-        #header .settings ul li a {
-          text-decoration: none;
-          color: #868686;
-          transition: all 0.1s ease-in-out; }
-        #header .settings ul li:hover {
-          background: #efefff;
-          color: #333333; }
-          #header .settings ul li:hover span path {
-            fill: #43425d; }
-          #header .settings ul li:hover a {
-            color: #333333; }
-          #header .settings ul li:hover.lock {
-            background-color: #fcae53;
-            color: #ffffff; }
-            #header .settings ul li:hover.lock path {
-              fill: #ffffff; }
-          #header .settings ul li:hover.logout {
-            background-color: #ff0000;
-            color: #ffffff; }
-            #header .settings ul li:hover.logout path {
-              fill: #ffffff; }
-      #header .settings ul .fill path {
-        fill: rgba(67, 66, 93, 0.6); }
-    #header .settings.visible {
-      top: 100%;
-      box-shadow: 0 5px 20px 0 #efefff; }
-  #header .notifications {
-    position: absolute;
-    right: -360px;
-    top: 50px;
-    width: 350px;
-    background: #ffffff;
-    z-index: 1;
-    transition: all 0.2s ease-in-out;
-    overflow: hidden;
-    height: calc(100vh - 50px); }
-    #header .notifications.visible {
-      right: 0;
-      box-shadow: -10px 20px 20px 0 #efefff; }
-    #header .notifications .markAsRead:hover {
-      text-decoration: underline;
-      cursor: pointer; }
-    #header .notifications .notification {
-      text-decoration: none;
-      color: #333333;
-      min-height: 40px;
-      width: 100%;
-      border-bottom: 1px solid #efefff;
-      position: relative; }
-      #header .notifications .notification:hover {
-        background: #efefff; }
-      #header .notifications .notification .circle {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: #e69757; }
-    #header .notifications ul {
-      height: calc(100vh - 150px);
-      overflow-y: auto;
-      overflow-x: hidden; }
-      #header .notifications ul .imgContainer img {
-        height: 27px;
-        width: 27px;
-        border-radius: 50%;
-        margin-top: 7px; }
-
 .inputComponent .inputWrapper {
   position: relative;
   line-height: 1; }
@@ -5808,7 +5622,7 @@ input[type="number"] {
   font-size: 15px;
   border: 1px solid yellow;
   color: brown;
-  background: yellow;
+  background: #ffff00;
   border-radius: 30px;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
@@ -5870,28 +5684,6 @@ input[type="number"] {
     .btn.btn-header-active.fill path {
       fill: rgba(67, 66, 93, 0.4); }
 
-.btn-save {
-  background-color: #43425d !important;
-  color: white !important;
-  width: 150px; }
-  .btn-save:hover {
-    background-color: #2e2d3f !important;
-    color: white; }
-
-.btn-back {
-  background-color: white !important;
-  color: #43425d !important; }
-  .btn-back:hover {
-    background-color: #43425d !important;
-    color: white !important; }
-  .btn-back.small {
-    padding: 5px 5px;
-    font-size: 13px; }
-  .btn-back.medium {
-    padding: 5px 12px;
-    font-size: 13px;
-    border-radius: 5px; }
-
 .btn-cancel {
   background-color: white !important;
   color: #43425d !important;
@@ -5900,19 +5692,6 @@ input[type="number"] {
   .btn-cancel:hover {
     background-color: #e6e6e6 !important;
     color: white; }
-
-.btn-delete {
-  background-color: red !important;
-  color: white !important;
-  width: 150px;
-  border: 1px solid red !important; }
-  .btn-delete:hover {
-    background-color: #e60000 !important;
-    color: white; }
-
-.hover-purple:hover {
-  background-color: #43425d !important;
-  color: white !important; }
 
 .btn-okay {
   width: 70px;
@@ -5926,22 +5705,6 @@ input[type="number"] {
 button[disabled] {
   pointer-events: none;
   opacity: 0.7; }
-
-.goBack {
-  background: none;
-  border: none;
-  outline: none; }
-  .goBack svg {
-    transition: all 0.1s ease-in-out; }
-    .goBack svg path {
-      fill: #43425d; }
-  .goBack span {
-    line-height: 1;
-    color: #43425d; }
-  .goBack:hover svg {
-    transform: translateX(-2px); }
-  .goBack:active svg {
-    transform: translateX(-5px); }
 
 .customDropdown label {
   position: absolute;
@@ -6102,9 +5865,6 @@ button[disabled] {
       color: green !important; }
     .modal .modalWrapper.errorModal {
       color: red !important; }
-    .modal .modalWrapper.crpsModal {
-      height: 700px;
-      overflow-y: auto; }
   .modal.visible {
     transform: translateY(0);
     opacity: 1; }
@@ -6232,94 +5992,6 @@ button[disabled] {
       #contextMenu li.contextDelete:hover .contextIcon path {
         fill: #ffffff; }
 
-.folderStructure ul {
-  list-style: none; }
-  .folderStructure ul li {
-    height: 35px;
-    overflow-y: hidden; }
-    .folderStructure ul li .item {
-      height: 35px;
-      transition: all 0.1s ease-in-out;
-      border-bottom: 1px solid #efefff; }
-      .folderStructure ul li .item.active {
-        background: rgba(239, 239, 255, 0.8); }
-      .folderStructure ul li .item:hover {
-        background: #efefff; }
-    .folderStructure ul li .folderStructureArrow {
-      transform: rotate(-90deg); }
-    .folderStructure ul li.open {
-      height: auto; }
-      .folderStructure ul li.open .folderStructureArrow {
-        transform: rotate(0); }
-
-.folderStructureWrapper {
-  width: 600px;
-  height: 500px;
-  max-width: 90%;
-  max-height: 90%;
-  overflow: hidden; }
-  .folderStructureWrapper .selected {
-    height: 100px;
-    background: rgba(239, 239, 255, 0.5); }
-  .folderStructureWrapper .folderStructure {
-    height: calc(100% - 106px);
-    overflow: hidden; }
-    .folderStructureWrapper .folderStructure .folderList {
-      height: calc(100% - 100px);
-      overflow-y: auto;
-      overflow-x: hidden; }
-
-.fileUploadProgressList {
-  position: fixed;
-  bottom: -100%;
-  left: 110px;
-  width: 700px;
-  max-width: 90%;
-  background-color: white;
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
-  overflow: hidden;
-  border: 1px solid #bcbcff;
-  transition: all 0.2s ease-in-out; }
-  .fileUploadProgressList.visible {
-    bottom: 0; }
-  .fileUploadProgressList.hidden {
-    transform: translateY(calc(100% - 50px)); }
-  .fileUploadProgressList .bar {
-    height: 50px;
-    background-color: #efefff; }
-    .fileUploadProgressList .bar .completed {
-      background-color: #43425d;
-      color: #ffffff;
-      padding: 0.3rem;
-      width: 75px;
-      border-radius: 4px; }
-    .fileUploadProgressList .bar .rightSide {
-      line-height: 0; }
-    .fileUploadProgressList .bar .arrowUpload path {
-      fill: #ffffff; }
-  .fileUploadProgressList .items {
-    max-height: 250px;
-    overflow-y: auto;
-    transition: all 0.5s ease-in-out; }
-    .fileUploadProgressList .items .item {
-      height: 50px;
-      border-bottom: 1px solid #efefff;
-      position: relative; }
-      .fileUploadProgressList .items .item .arrowUpload path {
-        fill: #43425d; }
-      .fileUploadProgressList .items .item .progressBar {
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background-color: #e69757;
-        border-radius: 4px; }
-        .fileUploadProgressList .items .item .progressBar.completed {
-          background-color: #43425d; }
-
 .showMore {
   position: relative; }
   .showMore .showMoreIcon path {
@@ -6358,82 +6030,6 @@ button[disabled] {
       color: white; }
       .showMore .showMoreItems .showMoreDelete:hover path {
         fill: white; }
-
-.breadCrumbs a {
-  text-decoration: none;
-  transition: all 0.1s ease-in-out; }
-  .breadCrumbs a .rootIcon path {
-    transition: all 0.1s ease-in-out; }
-  .breadCrumbs a:hover {
-    color: #43425d; }
-    .breadCrumbs a:hover .rootIcon path {
-      fill: #43425d; }
-
-.toastNotifications {
-  background-color: #ffffff;
-  position: fixed;
-  right: -100%;
-  top: 7rem;
-  max-height: 200px;
-  width: 400px;
-  border: 1px solid #efefff;
-  box-shadow: 0 5px 20px 0 rgba(67, 66, 93, 0.2);
-  border-radius: 16px;
-  overflow: auto;
-  transition: all 0.3s ease-in-out; }
-  .toastNotifications.visible {
-    right: 2rem; }
-  .toastNotifications .toastNotification {
-    min-height: 40px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.1s ease-in-out; }
-    .toastNotifications .toastNotification .close {
-      position: absolute;
-      right: 0;
-      top: 0;
-      padding: 5px 5px 0 5px;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-bottom-left-radius: 8px;
-      transition: all 0.1s ease-in-out; }
-      .toastNotifications .toastNotification .close:hover {
-        background-color: rgba(0, 0, 0, 0.2); }
-      .toastNotifications .toastNotification .close svg {
-        transform: translateX(3px); }
-        .toastNotifications .toastNotification .close svg path {
-          fill: #ffffff; }
-    .toastNotifications .toastNotification .notificationContainer {
-      min-height: 40px;
-      width: 100%;
-      color: #ffffff;
-      font-size: 14px;
-      text-decoration: none;
-      cursor: pointer; }
-    .toastNotifications .toastNotification.type-1 {
-      background-color: #31b3e5; }
-      .toastNotifications .toastNotification.type-1:hover {
-        background-color: #1caae0; }
-    .toastNotifications .toastNotification.type-2 {
-      background-color: #31b3e5; }
-      .toastNotifications .toastNotification.type-2:hover {
-        background-color: #1caae0; }
-    .toastNotifications .toastNotification.type-3 {
-      background-color: #ffc107; }
-      .toastNotifications .toastNotification.type-3:hover {
-        background-color: #edb100; }
-    .toastNotifications .toastNotification.type-4 {
-      background-color: #ff5722; }
-      .toastNotifications .toastNotification.type-4:hover {
-        background-color: #ff4409; }
-    .toastNotifications .toastNotification.type-5 {
-      background-color: #ff0000; }
-      .toastNotifications .toastNotification.type-5:hover {
-        background-color: #e60000; }
 
 /*******************************/
 /* PAGES                       */
@@ -7352,13 +6948,12 @@ button[disabled] {
   padding: 20px;
   border-radius: 30px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  background: white;
   width: 450px;
   background: white; }
 
 body {
-  background: url(https://cdn4.vectorstock.com/i/1000x1000/08/98/monkeys-living-in-forest-vector-7830898.jpg);
-  background-size: 100%; }
+  background-size: 100% !important;
+  background: url("../monkeybg.jpg"); }
 
 .maincontainer {
   display: flex;
@@ -7403,10 +6998,28 @@ body {
   margin-top: 38px; }
 
 .titleWelcome {
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 900;
-  color: greenyellow;
+  color: #adff2f;
   font-family: sans-serif; }
+
+input {
+  height: 40px;
+  width: 300px;
+  /*background-color: #254E58;*/
+  border-radius: 20px;
+  border: none;
+  color: #5a5449;
+  text-indent: 15px;
+  font-size: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  outline: none; }
+
+input::placeholder {
+  color: lightgrey;
+  font-size: 100%;
+  font-weight: lighter;
+  text-indent: 15px; }
 
 .icon {
   fill: greenyellow; }
@@ -7415,5 +7028,8 @@ body {
   line-height: 1;
   color: #4d4f5c;
   font-size: 1.4rem; }
+
+.modalBg {
+  background: #e4f3ae98; }
 
 /*# sourceMappingURL=style.css.map */

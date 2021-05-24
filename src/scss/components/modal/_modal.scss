@@ -15,19 +15,10 @@ $theme-main-1: #43425d;
         background-color: #ffffff;
         border-radius: 12px;
         &.successModal {
-            // background-color: #bdfbbdb3 !important;
-            // color: black;
             color: green !important;
         }
         &.errorModal {
-            //background-color: #e21212b3 !important;
-            //color: black;
             color: red !important;
-        }
-
-        &.crpsModal {
-            height: 700px;
-            overflow-y: auto;
         }
     }
 
