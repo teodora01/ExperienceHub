@@ -455,7 +455,7 @@ class Form extends React.Component<any, any> {
                     ...errors,
                 },
             }));
-            if (Object.keys(errors).length !== 0 && !termsAndConditions) {
+            if (Object.keys(errors).length === 0 && !termsAndConditions) {
                 this.setState({ showFailedModal: true });
             }
         } else {
